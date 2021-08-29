@@ -52,39 +52,56 @@ Route::group(['admin'], function() {
         return 'Delete database';
     });
 });
+
+
+Route::get('/user/{id}', function (Request $request, $id) {
+    return 'User '.$id;
+});
+
 Route::get('/view', function() {
     return view('view');
 });
 
-
-
-Route::post('/test2', function (Request $request) {
-    echo view('view2', ['request'=> $request->input('name')]);
+Route::get('/test', function (Request $request) {
+    return view('view', ['request'=> $request->all()]);
 });
 
-//Route::redirect('/here', '/there');  //chuyển từ trang trước ra sau
+Route::get('/view2', function () {
+    if (View::exists('emails.customer')) {
+        return view('view2', ['name' => 'Tien']);
+    }
 
-Route::view('/welcome', 'welcome', ['name' => 'Taylor']);
+    if (View::exists('emails.customer') == false) {
+        return view('view2', ['name' => 'James']);
+    }
 
-Route::get('/user/{id}', function (Request $request, $id) {//nhập id tùy chọn ở sau  có thể có hoặc ko
-    return 'User '.$id;
+    
 });
 
-Route::get('/users/{name?}', function ($name = 'John') {//nhập tên tùy chọn ở sau  có thể có hoặc ko
-    return $name;
+use Illuminate\Support\Facades\View;
+
+Route::get('/views', function () {
+    return view('view2')
+                ->with('name', 'Victoria')
+                ->with('occupation', 'Astronaut');
 });
 
-Route::get('/userss/{name}', function ($name) {
-    //
-})->where('name', '[A-Za-z]+');//kiểm tra nếu đkiện sai thì báo lỗi
+//route view component
+Route::get('/home-page', function() {
+    if (View::exists('index')) {
+        return view('index');
+    }
+    return view('home-page');
+})->name('home-page');
 
+Route::get('/service-page', function() {
+    return view('my-layouts-page.service-page');
+})->name('service-page');
 
-Route::get('/greeting', function () {
-   return view('greeting', ['name' => 'James']);
-}); 
+Route::get('/about-page', function() {
+    return view('my-layouts-page.about-page');
+})->name('about-page');
 
-Route::get('/parameters/{id}', function ($id) {
-    return 'Parameter ' . $id;
-})->name('param');
-
-
+Route::get('/contact-page', function() {
+    return view('my-layouts-page.contact-page');
+})->name('contact-page');
