@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,4 +21,11 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/myview', function() {
+    return view('myview');
+});
+
+Route::post('/data', function (Request $request) {
+    return view('test', ['data' => $request->all()]);
+});
 require __DIR__.'/auth.php';
