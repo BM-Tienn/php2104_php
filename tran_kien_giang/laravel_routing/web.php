@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,30 +22,29 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/name', function () {
+    return ('Well Come To Giang Cá Khô From Ba Vì !!');
+});
+
+Route::get('/input-get', function () {
+   return view('inputget');
+});
+
+Route::get('/user{id}', function ($id) {
+    return 'User '.$id;
+});
+
+Route::get('/demo-get', function (Request $request) {
+    return view('outputget', ['data'=>$request->all()]);
+});
+
+Route::get('/input-post', function () {
+   return view('inputpost');
+});
+
+Route::post('/demo-post', function (Request $request) {
+    return view('outputpost', ['data'=>$request->all()]);
+});
 require __DIR__.'/auth.php';
-
-Route::get('/myview', function() {
-    return view('myview');
-});
-
-Route::post('/data', function (Request $request) {
-    return view('test', ['data' => $request->all()]);
-});
-
-route::get('/view-demo', function() {
-    return view('view_demo');
-});
-
-// route::get('/my-view-mvc', function() {
-//     return view('view_mvc.my_view_mvc', ['name' => 'Hiếu']);
-// });
-
-route::get('/my-view-mvc', function() {
-    if (View::exists('view_mvc.my_view_mvc')) {
-        return view('view_mvc.my_view_mvc', ['name' => 'Hiếu']); 
-    }else {
-        echo '<h1>NOT FOUND</h1>';
-    }  
-});
-
-
+    

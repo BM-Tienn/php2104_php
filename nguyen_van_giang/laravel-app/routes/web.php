@@ -56,3 +56,15 @@ Route::name('admin.')->prefix('admin')->middleware(['admin'])->group(function ()
         return view('myview');
     })->name('myview');
 });
+
+Route::get('/home-page', function() {
+    if (View::exists('index')) {
+        return view('index');
+    }
+
+    return view('home-page');
+})->name('home-page');
+
+Route::get('/child-page', function() {
+    return view('my-directory.child-page');
+})->name('child-page');
