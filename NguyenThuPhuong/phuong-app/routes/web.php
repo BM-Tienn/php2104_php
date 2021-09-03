@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\View;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,3 +73,57 @@ Route::group(['prefix' => 'admin'], function() {
         return 'Delete product';
     });
 });
+
+//view trong folder phuon
+Route::get('/phuon', function () {
+    return view('phuon.test'); 
+});
+
+//kiem tra 1 view co ton tai hay k
+Route::get('/checkview', function() {
+    if (View::exists('phuon.check')) {
+        echo '<script>alert("File check exist");</script>';
+    } else {
+        echo '<script>alert("File check is not exist");</script>';
+    }
+});
+
+//truyen bien vao view
+Route::get('/data', function () {
+    return view('phuong')
+                ->with('name', 'Phuong')
+                ->with('age', 23); 
+});
+
+//
+Route::get('/home-page', function() {
+   return view('home-page');
+});
+
+Route::get('/about-ms', function() {
+    return view('my-directory.about-ms');
+ });
+ Route::get('/blog-ms', function() {
+    return view('my-directory.blog-ms');
+ });
+ Route::get('/blog-single-ms', function() {
+    return view('my-directory.blog-single-ms');
+ });
+ Route::get('/cart-ms', function() {
+    return view('my-directory.cart-ms');
+ });
+ Route::get('/checkout-ms', function() {
+    return view('my-directory.checkout-ms');
+ });
+ Route::get('/contact-ms', function() {
+    return view('my-directory.contact-ms');
+ });
+ Route::get('/product-single-ms', function() {
+    return view('my-directory.product-single-ms');
+ });
+ Route::get('/shop-ms', function() {
+    return view('my-directory.shop-ms');
+ });
+ Route::get('/wishlist-ms', function() {
+    return view('my-directory.wishlist-ms');
+ });

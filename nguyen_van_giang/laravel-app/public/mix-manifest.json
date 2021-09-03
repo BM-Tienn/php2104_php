@@ -1,4 +1,15 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/themes/vegefoods/about.html": "/themes/vegefoods/about.html",
+    "/themes/vegefoods/blog-single.html": "/themes/vegefoods/blog-single.html",
+    "/themes/vegefoods/blog.html": "/themes/vegefoods/blog.html",
+    "/themes/vegefoods/cart.html": "/themes/vegefoods/cart.html",
+    "/themes/vegefoods/checkout.html": "/themes/vegefoods/checkout.html",
+    "/themes/vegefoods/contact.html": "/themes/vegefoods/contact.html",
+    "/themes/vegefoods/index.html": "/themes/vegefoods/index.html",
+    "/themes/vegefoods/prepros-6.config": "/themes/vegefoods/prepros-6.config",
+    "/themes/vegefoods/product-single.html": "/themes/vegefoods/product-single.html",
+    "/themes/vegefoods/shop.html": "/themes/vegefoods/shop.html",
+    "/themes/vegefoods/wishlist.html": "/themes/vegefoods/wishlist.html"
 }

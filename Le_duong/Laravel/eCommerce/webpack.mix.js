@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,8 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'public/css', [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
-]);
+mix.copyDirectory("resources/css", "public/css");
+mix.copyDirectory("resources/js", "public/js");
+mix.copyDirectory("resources/fonts", "public/fonts");
+mix.copyDirectory("resources/images", "public/images");

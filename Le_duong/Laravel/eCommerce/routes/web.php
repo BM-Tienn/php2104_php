@@ -17,45 +17,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-// Route home 
-Route::get('/home',function () {
-    if(View::exists('home')) {
-        return view('home');
+Route::get('/products',function () {
+    if(View::exists('pages.products')) {
+        return view('pages.products');
     }
-    return view('pages.404');
-});
+})->name('products');
 
-// Route product page
-Route::get('/product',function () {
-    if(View::exists('pages.product')) {
-        return view('pages.product');
+Route::get('/product_details',function () {
+    if(View::exists('pages.product_details')) {
+        return view('pages.product_details');
     }
-});
+})->name('product_details');
 
-// Route contact page
+Route::get('/checkout',function () {
+    if(View::exists('pages.checkout')) {
+        return view('pages.checkout');
+    }
+})->name('checkout');
+
 Route::get('/contact',function () {
-    if ((!View::exists('pages.contact')) && (!View::exists('pages.coming'))) {
-        return view('pages.404');  
-    }
-    else if (View::exists('pages.contact')) {
+    if(View::exists('pages.contact')) {
         return view('pages.contact');
     }
-    return view('pages.coming');
-    
-});
-
-// Route about page
-Route::get('/about',function () {
-    if ((!View::exists('pages.about')) && (!View::exists('pages.coming'))) {
-        return view('pages.404');  
-    }
-    else if (View::exists('pages.about')) {
-        return view('pages.about');
-    }
-    return view('pages.coming');
-});
+})->name('contact');
 require __DIR__.'/auth.php';
