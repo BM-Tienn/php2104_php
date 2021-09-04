@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use PHPUnit\TextUI\XmlConfiguration\CodeCoverage\Report\Php;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +76,24 @@ Route::prefix('admin.')->group(function () {
         //Url like: http://127.0.0.1:8000/admin/users , admin is a prefix in front of users
     })->name('users');
 });
+
+Route::get('/main-home', function () {
+    return view('home.main_home');
+
+    if (View::exists('home.main_home')) {
+        echo "<script> alert('Trang không tồn tại'); </script>";
+    }
+});
+
+Route::get('/component', function() {
+    return view('home.component');
+});
+
+Route::get('/shopper_fashion/home', function() {
+    return view('home-page');
+}); 
+
+
 
 
 

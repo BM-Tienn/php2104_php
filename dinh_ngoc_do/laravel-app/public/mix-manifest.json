@@ -1,4 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/themes/shopper_fashion/about.html": "/themes/shopper_fashion/about.html",
+    "/themes/shopper_fashion/cart.html": "/themes/shopper_fashion/cart.html",
+    "/themes/shopper_fashion/checkout.html": "/themes/shopper_fashion/checkout.html",
+    "/themes/shopper_fashion/contact.html": "/themes/shopper_fashion/contact.html",
+    "/themes/shopper_fashion/index.html": "/themes/shopper_fashion/index.html",
+    "/themes/shopper_fashion/prepros-6.config": "/themes/shopper_fashion/prepros-6.config",
+    "/themes/shopper_fashion/shop-single.html": "/themes/shopper_fashion/shop-single.html",
+    "/themes/shopper_fashion/shop.html": "/themes/shopper_fashion/shop.html",
+    "/themes/shopper_fashion/thankyou.html": "/themes/shopper_fashion/thankyou.html"
 }
