@@ -2,7 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\View;
+=======
+>>>>>>> 03552b6... [Hieu_ND --routing] (#78)
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +24,17 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+<<<<<<< HEAD
+=======
+
+Route::get('/myview', function() {
+    return view('myview');
+});
+
+Route::post('/data', function (Request $request) {
+    return view('test', ['data' => $request->all()]);
+});
+>>>>>>> 03552b6... [Hieu_ND --routing] (#78)
 require __DIR__.'/auth.php';
 
 Route::get('/myview', function() {
