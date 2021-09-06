@@ -54,6 +54,18 @@ class ShopSeeder extends Seeder
                 'classify' => 'CATEGORIES',
             ],
 
+            [
+                'id' => 4 ,
+                'name' => 'Atta',
+                'image' => 'Atta.jpg',
+                'price' => 350.00,
+                'price_sale' => 190.00,
+                'description' => 'Fruits And VegetablesFruits And VegetablesFruits And Vegetables',
+                'quantity' => rand(10,100),
+                'status' => rand(0, 1),
+                'classify' => 'FOOD',
+            ],
+
         ];
 
         DB::table('shop_products')->insert($data);

@@ -16,13 +16,13 @@ class CreateShopProductsTable extends Migration
         Schema::create('shop_products', function (Blueprint $table) {
             $table->integer('id');
             $table->string('name', 100);
-            $table->float('price', 10, 2)->nullable();//giá 
-            $table->float('price_sale', 10, 2)->nullable();//giá sale
+            $table->float('price', 10, 2)->nullable();
+            $table->float('price_sale', 10, 2)->nullable();
             $table->text('image');
-            $table->text('description');//mô tả
-            $table->integer('quantity');//số lượng
-            $table->tinyInteger('status');//trạng thái
-            $table->text('classify'); //phân loại
+            $table->text('description');
+            $table->integer('quantity');
+            $table->tinyInteger('status');
+            $table->text('classify'); 
             $table->timestamps();
         });
     }
