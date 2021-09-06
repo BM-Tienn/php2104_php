@@ -16,6 +16,7 @@ cd nguyen_van_giang/laravel-app/
 composer install
 npm install
 npm run dev
+php artisan migrate --seed
 ```
 
 And start server
