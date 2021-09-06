@@ -31,15 +31,15 @@ Route::post('/data', function (Request $request) {
     return view('test', ['data' => $request->all()]);
 });
 
-route::get('/view-demo', function() {
+Route::get('/view-demo', function() {
     return view('view_demo');
 });
 
-// route::get('/my-view-mvc', function() {
+// Route::get('/my-view-mvc', function() {
 //     return view('view_mvc.my_view_mvc', ['name' => 'Hiếu']);
 // });
 
-route::get('/my-view-mvc', function() {
+Route::get('/my-view-mvc', function() {
     if (View::exists('view_mvc.my_view_mvc')) {
         return view('view_mvc.my_view_mvc', ['name' => 'Hiếu']); 
     }else {
@@ -47,4 +47,39 @@ route::get('/my-view-mvc', function() {
     }  
 });
 
-
+Route::get('/index', function() {
+    return view('mypage.home-page');
+});
+Route::get('/shop', function() {
+    return view('mypage.shop');
+});
+Route::get('/product-details', function() {
+    return view('mypage.product-details');
+});
+Route::get('/cart', function() {
+    return view('mypage.cart');
+});
+Route::get('/about', function() {
+    return view('mypage.about');
+});
+Route::get('/blog', function() {
+    return view('mypage.blog');
+});
+Route::get('/blog-details', function() {
+    return view('mypage.blog-details');
+});
+Route::get('/login', function() {
+    return view('mypage.login');
+});
+Route::get('/elements', function() {
+    return view('mypage.elements');
+});
+Route::get('/confirmation', function() {
+    return view('mypage.confirmation');
+});
+Route::get('/checkout', function() {
+    return view('mypage.checkout');
+});
+Route::get('/contact', function() {
+    return view('mypage.contact');
+});

@@ -3,8 +3,6 @@
 use Illuminate\Support\Str;
 
 return [
-    'gnv' => 'Van Giang',
-
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name

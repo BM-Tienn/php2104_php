@@ -1,4 +1,19 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/time-zone/about.html": "/time-zone/about.html",
+    "/time-zone/blog-details.html": "/time-zone/blog-details.html",
+    "/time-zone/blog.html": "/time-zone/blog.html",
+    "/time-zone/cart.html": "/time-zone/cart.html",
+    "/time-zone/checkout.html": "/time-zone/checkout.html",
+    "/time-zone/confirmation.html": "/time-zone/confirmation.html",
+    "/time-zone/contact.html": "/time-zone/contact.html",
+    "/time-zone/contact_process.php": "/time-zone/contact_process.php",
+    "/time-zone/elements.html": "/time-zone/elements.html",
+    "/time-zone/index.html": "/time-zone/index.html",
+    "/time-zone/login.html": "/time-zone/login.html",
+    "/time-zone/main.html": "/time-zone/main.html",
+    "/time-zone/product_details.html": "/time-zone/product_details.html",
+    "/time-zone/readme.txt": "/time-zone/readme.txt",
+    "/time-zone/shop.html": "/time-zone/shop.html"
 }
