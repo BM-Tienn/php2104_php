@@ -18,53 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-
-Route::get('/param/{id}/param2/{id2?}', function (Request $request, $id, $id2 = 200) {
-    dd($request->all());
-    return view('welcome', ['id' => $id, 'id2' => $id2]);
-});
-
-Route::get('/myview', function () {
-    return view('myview');
-})->name('myview');
-
-Route::post('test', function(Request $request) {
-    dd($request->all());
-});
-
-Route::middleware(['auth'])->group(function () {
-
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
-    Route::get('/myview', function () {
-        return view('myview');
-    })->name('myview');
-});
-
-Route::name('admin.')->prefix('admin')->middleware(['admin'])->group(function () {
-
-    Route::get('products', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
-    Route::get('users', function () {
-        return view('myview');
-    })->name('myview');
-});
-
-Route::get('/home-page', function() {
-    if (View::exists('index')) {
-        return view('index');
-    }
-
-    return view('home-page');
-})->name('home-page');
-
-Route::get('/child-page', function() {
-    return view('my-directory.child-page');
-})->name('child-page');
