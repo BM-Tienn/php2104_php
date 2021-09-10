@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,13 +59,8 @@ Route::name('admin.')->prefix('admin')->middleware(['admin'])->group(function ()
     })->name('myview');
 });
 
-Route::get('/home-page', function() {
-    if (View::exists('index')) {
-        return view('index');
-    }
-
-    return view('home-page');
-})->name('home-page');
+Route::get('/home-page', [HomeController::class, 'index'])->name('home-page');
+Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.show');
 
 Route::get('/child-page', function() {
     return view('my-directory.child-page');

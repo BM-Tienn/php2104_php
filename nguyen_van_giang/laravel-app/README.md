@@ -27,6 +27,8 @@ php artisan serve
 
 Now, you can try it http://localhost:8000/home-page
 
+and http://localhost:8000/products/1
+
 https://user-images.githubusercontent.com/49383891/131205031-7723bd94-7a58-4e6e-9d57-3700b892fd6d.mov
 
 

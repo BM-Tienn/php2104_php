@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->tinyInteger('rate');
             $table->float('price');
             $table->string('color');
-            $table->string('image');
+            $table->string('image_url');
             $table->string('itended');
             $table->string('code');
             $table->string('brand');

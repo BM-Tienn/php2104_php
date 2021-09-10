@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,22 +8,22 @@
 <script src="{{asset('js/jquery-1.11.0.min.js')}}"></script>
 <!--Custom-Theme-files-->
 <!--theme-style-->
-<link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />	
+<link href="{{asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Luxury Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+<meta name="keywords" content="Luxury Watches Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--start-menu-->
 <script src="{{asset('js/simpleCart.min.js')}}"> </script>
 <link href="{{asset('css/memenu.css')}}" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="{{asset('js/memenu.js')}}"></script>
-<script>$(document).ready(function(){$(".memenu").memenu();});</script>	
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
 <!--dropdown-->
-<script src="{{asset('js/jquery.easydropdown.js')}}"></script>			
+<script src="{{asset('js/jquery.easydropdown.js')}}"></script>
 </head>
-<body> 
+<body>
 
 	<!--top-header-->
 	<x-top_header/>
@@ -40,23 +41,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="bnr" id="home">
 		<div  id="top" class="callbacks_container">
 			<ul class="rslides" id="slider4">
+                @foreach($banners as $banner)
 			    <li>
-					<img src="{{asset('images/bnr-1.jpg')}}"alt=""/>
+					<img src="{{asset('storage/images/banner/'.$banner->name)}}" alt=""/>
 				</li>
-				<li>
-					<img src="{{asset('images/bnr-2.jpg')}}" alt=""/>
-				</li>
-				<li>
-					<img src="{{asset('images/bnr-3.jpg')}}" alt=""/>
-				</li>
+                @endforeach
+{{--				<li>--}}
+{{--					<img src="{{asset('images/bnr-2.jpg')}}" alt=""/>--}}
+{{--				</li>--}}
+{{--				<li>--}}
+{{--					<img src="{{asset('images/bnr-3.jpg')}}" alt=""/>--}}
+{{--				</li>--}}
 			</ul>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
-	<!--banner-ends--> 
+	<!--banner-ends-->
 
 	<!--Slider-Starts-Here-->
-	<script src="js/responsiveslides.min.js"></script>
+	<script src="{{asset('js/responsiveslides.min.js')}}"></script>
 	<script>
 	// You can also use "$(window).load(function() {"
 	$(function () {
@@ -80,36 +83,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--End-slider-script-->
 
 	<!--about-starts-->
-	<div class="about"> 
+	<div class="about">
 		<div class="container">
 			<div class="about-top grid-1">
+                @foreach($sliders as $slider)
 				<div class="col-md-4 about-left">
 					<figure class="effect-bubba">
-						<img class="img-responsive" src="{{asset('images/abt-1.jpg')}}" alt=""/>
+						<img class="img-responsive" src="{{asset('storage/images/slider/'.$slider->name)}}" alt="{{$slider->name}}"/>
 						<figcaption>
 							<h2>Nulla maximus nunc</h2>
-							<p>In sit amet sapien eros Integer dolore magna aliqua</p>	
-						</figcaption>			
+							<p>In sit amet sapien eros Integer dolore magna aliqua</p>
+						</figcaption>
 					</figure>
 				</div>
-				<div class="col-md-4 about-left">
-					<figure class="effect-bubba">
-						<img class="img-responsive" src="{{asset('images/abt-2.jpg')}}" alt=""/>
-						<figcaption>
-							<h4>Mauris erat augue</h4>
-							<p>In sit amet sapien eros Integer dolore magna aliqua</p>	
-						</figcaption>			
-					</figure>
-				</div>
-				<div class="col-md-4 about-left">
-					<figure class="effect-bubba">
-						<img class="img-responsive" src="{{asset('images/abt-3.jpg')}}" alt=""/>
-						<figcaption>
-							<h4>Cras elit mauris</h4>
-							<p>In sit amet sapien eros Integer dolore magna aliqua</p>	
-						</figcaption>			
-					</figure>
-				</div>
+                @endforeach
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -117,7 +104,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--about-end-->
 
 	<!--product-starts-->
-	<x-product_home/>
+
+	<x-product_home :products="$products"/>
+
 	<!--product-end-->
 
 	<!--information-starts-->
@@ -126,6 +115,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<!--footer-starts-->
 	<x-footer/>
-	<!--footer-end-->	
+	<!--footer-end-->
 </body>
 </html>

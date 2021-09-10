@@ -26,18 +26,6 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('register1', function() {
-    return view('registerform');
-});
-
-Route::get('/info', function (Request $request) {
-    return view('registerinfo', ['data' => $request->all()]);
-});
-
-Route::post('/info', function (Request $request) {
-    return view('registerinfo', ['data' => $request->all()]);
-});
-
 //Route Parameters
 
 //Required Parameters
@@ -77,21 +65,37 @@ Route::prefix('admin.')->group(function () {
     })->name('users');
 });
 
-Route::get('/main-home', function () {
-    return view('home.main_home');
-
-    if (View::exists('home.main_home')) {
-        echo "<script> alert('Trang không tồn tại'); </script>";
-    }
-});
-
-Route::get('/component', function() {
-    return view('home.component');
-});
-
 Route::get('/shopper_fashion/home', function() {
     return view('home-page');
 }); 
+
+Route::get('/shopper_fashion/shop', function() {
+    return view('shopper-shop');
+});
+
+Route::get('/shopper_fashion/shop-single', function () {
+    return view('shopper-shop-single');
+});
+
+Route::get('/shopper_fashion/cart', function () {
+    return view('shopper-cart');
+});
+
+Route::get('/shopper_fashion/checkout', function () {
+    return view('shopper-checkout');
+});
+
+Route::get('/shopper_fashion/thankyou', function () {
+    return view('shopper-thankyou');
+});
+
+Route::get('/shopper_fashion/about', function () {
+    return view('shopper-about');
+});
+
+Route::get('/shopper_fashion/contact', function () {
+    return view('shopper-contact');
+});
 
 
 

@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductDetailsController;
+use App\Http\Controllers\PhotosController;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\SliderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +18,22 @@ use Illuminate\Support\Facades\View;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/',[HomeController::class,'index']);
+
+Route::get('/product_details/{id}',[ProductDetailsController::class,'show'])
+    ->name('product_details');
+
+Route::get('/upload/product',[PhotosController::class,'create']);
+Route::post('/upload/product',[PhotosController::class,'store']);
+
+Route::get('/upload/banner',[BannerController::class,'create']);
+Route::post('/upload/banner',[BannerController::class,'store']);
+
+Route::get('/upload/slider',[SliderController::class,'create']);
+Route::post('/upload/slider',[SliderController::class,'store']);
+
+Route::get('/admin',function () {
+    return view('pages.login');
 });
 
 Route::get('/products',function () {
@@ -23,11 +42,11 @@ Route::get('/products',function () {
     }
 })->name('products');
 
-Route::get('/product_details',function () {
-    if(View::exists('pages.product_details')) {
-        return view('pages.product_details');
-    }
-})->name('product_details');
+//Route::get('/product_details',function () {
+//    if(View::exists('pages.product_details')) {
+//        return view('pages.product_details');
+//    }
+//})->name('product_details');
 
 Route::get('/checkout',function () {
     if(View::exists('pages.checkout')) {

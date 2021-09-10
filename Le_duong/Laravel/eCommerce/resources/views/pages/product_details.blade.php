@@ -8,7 +8,7 @@
         <div class="single-main">
             <div class="col-md-9 single-main-left">
             <div class="sngl-top">
-                <div class="col-md-5 single-top-left">	
+                <div class="col-md-5 single-top-left">
                     <div class="flexslider">
                             <ul class="slides">
                             <li data-thumb="{{asset('images/s-1.jpg')}}">
@@ -19,7 +19,7 @@
                             </li>
                             <li data-thumb="{{asset('images/s-3.jpg')}}">
                                 <div class="thumb-image"> <img src="{{asset('images/s-3.jpg')}}" data-imagezoom="true" class="img-responsive" alt=""/> </div>
-                            </li> 
+                            </li>
                             </ul>
                     </div>
                     <!-- FlexSlider -->
@@ -36,10 +36,10 @@
                         });
                     });
                     </script>
-                </div>	
+                </div>
                 <div class="col-md-7 single-top-right">
                     <div class="single-para simpleCart_shelfItem">
-                    <h2>Lorem Ipsum</h2>
+                    <h2>{{$product->name}}}</h2>
                         <div class="star-on">
                             <ul class="star-footer">
                                     <li><a href="#"><i> </i></a></li>
@@ -48,42 +48,31 @@
                                     <li><a href="#"><i> </i></a></li>
                                     <li><a href="#"><i> </i></a></li>
                                 </ul>
-                            <div class="review">
-                                <a href="#"> 1 customer review </a>
-                                
-                            </div>
                         <div class="clearfix"> </div>
                         </div>
-                        
-                        <h5 class="item_price">$ 95.00</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+
+                        <h5 class="item_price">$ {{$product->price}}.00</h5>
+                        <p>{{$product->description_short}}</p>
                         <div class="available">
                             <ul>
                                 <li>Color
                                     <select>
-                                    <option>Silver</option>
-                                    <option>Black</option>
-                                    <option>Dark Black</option>
-                                    <option>Red</option>
-                                </select></li>
-                            <li class="size-in">Size<select>
-                                <option>Large</option>
-                                <option>Medium</option>
-                                <option>small</option>
-                                <option>Large</option>
-                                <option>small</option>
-                            </select></li>
+
+                                    <option>{{$product->color}}</option>
+
+                                    </select>
+                                </li>
                             <div class="clearfix"> </div>
                         </ul>
                     </div>
                         <ul class="tag-men">
                             <li><span>TAG</span>
-                            <span class="women1">: Women,</span></li>
+                            <span class="women1">: {{$product->itended}},</span></li>
                             <li><span>SKU</span>
-                            <span class="women1">: CK09</span></li>
+                            <span class="women1">: {{$product->code}}</span></li>
                         </ul>
                             <a href="#" class="add-cart item_add">ADD TO CART</a>
-                        
+
                     </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -92,44 +81,21 @@
                 <ul class="menu_drop">
             <li class="item1"><a href="#"><img src="{{asset('images/arrow.png')}}" alt="">Description</a>
                 <ul>
-                    <li class="subitem1"><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</a></li>
-                    <li class="subitem2"><a href="#"> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore</a></li>
-                    <li class="subitem3"><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes </a></li>
-                </ul>
-            </li>
-            <li class="item2"><a href="#"><img src="{{asset('images/arrow.png')}}" alt="">Additional information</a>
-                <ul>
-                    <li class="subitem2"><a href="#"> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore</a></li>
-                    <li class="subitem3"><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes </a></li>
-                </ul>
-            </li>
-            <li class="item3"><a href="#"><img src="{{asset('images/arrow.png')}}" alt="">Reviews (10)</a>
-                <ul>
-                    <li class="subitem1"><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</a></li>
-                    <li class="subitem2"><a href="#"> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore</a></li>
-                    <li class="subitem3"><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes </a></li>
-                </ul>
-            </li>
-            <li class="item4"><a href="#"><img src="{{asset('images/arrow.png')}}" alt="">Helpful Links</a>
-                <ul>
-                    <li class="subitem2"><a href="#"> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore</a></li>
-                    <li class="subitem3"><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes </a></li>
-                </ul>
-            </li>
-            <li class="item5"><a href="#"><img src="{{asset('images/arrow.png')}}" alt="">Make A Gift</a>
-                <ul>
-                    <li class="subitem1"><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</a></li>
-                    <li class="subitem2"><a href="#"> Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore</a></li>
-                    <li class="subitem3"><a href="#">Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes </a></li>
+                    <li class="subitem1">
+                        <a href="#">{{$product->description_short}}</a>
+                    </li>
+                    <li class="subitem2">
+                        <a href="#">{{$product->description_long}}</a>
+                    </li>
                 </ul>
             </li>
         </ul>
             </div>
             <div class="latestproducts">
                 <div class="product-one">
-                    <div class="col-md-4 product-left p-left"> 
+                    <div class="col-md-4 product-left p-left">
                         <div class="product-main simpleCart_shelfItem">
-                            <a href="{{route('product_details')}}" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-1.png')}}" alt="" /></a>
+                            <a href="" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-1.png')}}" alt="" /></a>
                             <div class="product-bottom">
                                 <h3>Smart Watches</h3>
                                 <p>Explore Now</p>
@@ -140,9 +106,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 product-left p-left"> 
+                    <div class="col-md-4 product-left p-left">
                         <div class="product-main simpleCart_shelfItem">
-                            <a href="{{route('product_details')}}" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-2.png')}}" alt="" /></a>
+                            <a href="" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-2.png')}}" alt="" /></a>
                             <div class="product-bottom">
                                 <h3>Smart Watches</h3>
                                 <p>Explore Now</p>
@@ -153,9 +119,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 product-left p-left"> 
+                    <div class="col-md-4 product-left p-left">
                         <div class="product-main simpleCart_shelfItem">
-                            <a href="{{route('product_details')}}" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-3.png')}}" alt="" /></a>
+                            <a href="" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-3.png')}}" alt="" /></a>
                             <div class="product-bottom">
                                 <h3>Smart Watches</h3>
                                 <p>Explore Now</p>
@@ -178,10 +144,10 @@
                             <div class="col col-4">
                                 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Accessories</label>
                             </div>
-                            <div class="col col-4">								
+                            <div class="col col-4">
                                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Women Watches</label>
                                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Kids Watches</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Men Watches</label>			
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Men Watches</label>
                             </div>
                         </div>
                     </section>
@@ -203,7 +169,7 @@
                                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Maxima</label>
                                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Yepme</label>
                                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Citizen</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Diesel</label>			
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Diesel</label>
                             </div>
                         </div>
                     </section>
@@ -220,7 +186,7 @@
                                 <label class="radio"><input type="radio" name="radio"><i></i>750$-900$</label>
                                 <label class="radio"><input type="radio" name="radio"><i></i>~$1500</label>
                             </div>
-                        </div>					
+                        </div>
                     </section>
                 </div>
             </div>

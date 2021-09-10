@@ -1,16 +1,15 @@
 @extends('layouts.home')
 @section('name','Product')
-
 @section('content')
 <!--prdt-starts-->
-<div class="prdt"> 
+<div class="prdt">
     <div class="container">
         <div class="prdt-top">
             <div class="col-md-9 prdt-left">
                 <div class="product-one">
                     <div class="col-md-4 product-left p-left">
                         <div class="product-main simpleCart_shelfItem">
-                            <a href="{{route('product_details')}}" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-1.png')}}" alt="" /></a>
+                            <a href="" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-1.png')}}" alt="" /></a>
                             <div class="product-bottom">
                                 <h3>Smart Watches</h3>
                                 <p>Explore Now</p>
@@ -23,7 +22,7 @@
                     </div>
                     <div class="col-md-4 product-left p-left">
                         <div class="product-main simpleCart_shelfItem">
-                            <a href="{{route('product_details')}}" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-2.png')}}" alt="" /></a>
+                            <a href="" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-2.png')}}" alt="" /></a>
                             <div class="product-bottom">
                                 <h3>Smart Watches</h3>
                                 <p>Explore Now</p>
@@ -36,7 +35,7 @@
                     </div>
                     <div class="col-md-4 product-left p-left">
                         <div class="product-main simpleCart_shelfItem">
-                            <a href="{{route('product_details')}}" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-3.png')}}" alt="" /></a>
+                            <a href="" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-3.png')}}" alt="" /></a>
                             <div class="product-bottom">
                                 <h3>Smart Watches</h3>
                                 <p>Explore Now</p>
@@ -52,7 +51,7 @@
                 <div class="product-one">
                     <div class="col-md-4 product-left p-left">
                         <div class="product-main simpleCart_shelfItem">
-                            <a href="{{route('product_details')}}" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-4.png')}}" alt="" /></a>
+                            <a href="" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-4.png')}}" alt="" /></a>
                             <div class="product-bottom">
                                 <h3>Smart Watches</h3>
                                 <p>Explore Now</p>
@@ -65,7 +64,7 @@
                     </div>
                     <div class="col-md-4 product-left p-left">
                         <div class="product-main simpleCart_shelfItem">
-                            <a href="{{route('product_details')}}" class="mask"><img class="img-responsive zoom-img" src="images/p-5.png" alt="" /></a>
+                            <a href="" class="mask"><img class="img-responsive zoom-img" src="images/p-5.png" alt="" /></a>
                             <div class="product-bottom">
                                 <h3>Smart Watches</h3>
                                 <p>Explore Now</p>
@@ -78,7 +77,7 @@
                     </div>
                     <div class="col-md-4 product-left p-left">
                         <div class="product-main simpleCart_shelfItem">
-                            <a href="{{route('product_details')}}" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-6.png')}}" alt="" /></a>
+                            <a href="" class="mask"><img class="img-responsive zoom-img" src="{{asset('images/p-6.png')}}" alt="" /></a>
                             <div class="product-bottom">
                                 <h3>Smart Watches</h3>
                                 <p>Explore Now</p>
@@ -90,8 +89,8 @@
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                </div>	
-            </div>	
+                </div>
+            </div>
             <div class="col-md-3 prdt-right">
                 <div class="w_sidebar">
                     <section  class="sky-form">
@@ -100,11 +99,11 @@
                             <div class="col col-4">
                                 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>All Accessories</label>
                             </div>
-                            <div class="col col-4">								
+                            <div class="col col-4">
                                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Women Watches</label>
                                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Kids Watches</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Men Watches</label>			
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Smart Watches</label>			
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Men Watches</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Smart Watches</label>
                             </div>
                         </div>
                     </section>
@@ -126,7 +125,7 @@
                                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Maxima</label>
                                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Yepme</label>
                                 <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Citizen</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Diesel</label>									
+                                <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Diesel</label>
                             </div>
                         </div>
                     </section>
@@ -143,7 +142,7 @@
                                     <label class="radio"><input type="radio" name="radio"><i></i>750$-900$</label>
                                     <label class="radio"><input type="radio" name="radio"><i></i>~$1500</label>
                                 </div>
-                            </div>						
+                            </div>
                     </section>
                 </div>
             </div>

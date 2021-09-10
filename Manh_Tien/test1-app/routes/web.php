@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SingleController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +31,7 @@ Route::get('/you_name/{name?}', function ($name = 'Tien') {
 
 require __DIR__.'/auth.php';
 
-use Illuminate\Http\Request;
+
 
 Route::get('/form', function(){
     return view('view');
@@ -107,16 +111,44 @@ Route::get('/contact-page', function() {
 })->name('contact-page');
 
 //themes page
+Route::get('/theme-contact-page', function() {
+    return view('my-theme-page.contact-page');
+})->name('theme-contact-page');
+
+Route::get('/theme-offers-page', function() {
+    return view('my-theme-page.offers-page');
+})->name('theme-offers-page');
+
+Route::get('/theme-login-page', function() {
+    return view('my-theme-page.login-page');
+})->name('theme-login-page');
+
+Route::get('/theme-registered-page', function() {
+    return view('my-theme-page.registered-page');
+})->name('theme-registered-page');
+
+Route::get('/theme-faq-page', function() {
+    return view('my-theme-page.faq-page');
+})->name('theme-faq-page');
+
+Route::get('/theme-checkout-page', function() {
+    return view('my-theme-page.checkout-page');
+})->name('theme-checkout-page');
+
+Route::get('/theme-short-codes-page', function() {
+    return view('my-theme-page.short-codes-page');
+})->name('theme-short-codes-page');
+
+Route::get('/theme-about-page', function() {
+    return view('my-theme-page.about-page');
+})->name('theme-about-page');
+/*
 Route::get('/theme-home-page', function() {
     if (View::exists('index')) {
         return view('index');
     }
     return view('theme-home-page');
 })->name('theme-home-page');
-
-Route::get('/theme-contact-page', function() {
-    return view('my-theme-page.contact-page');
-})->name('theme-contact-page');
 
 Route::get('/theme-groceries-page', function() {
     return view('my-theme-page.groceries-page');
@@ -142,19 +174,6 @@ Route::get('/theme-gourmet-page', function() {
     return view('my-theme-page.gourmet-page');
 })->name('theme-gourmet-page');
 
-Route::get('/theme-offers-page', function() {
-    return view('my-theme-page.offers-page');
-})->name('theme-offers-page');
-
-
-Route::get('/theme-login-page', function() {
-    return view('my-theme-page.login-page');
-})->name('theme-login-page');
-
-Route::get('/theme-registered-page', function() {
-    return view('my-theme-page.registered-page');
-})->name('theme-registered-page');
-
 Route::get('/theme-products-page', function() {
     return view('my-theme-page.products-page');
 })->name('theme-products-page');
@@ -162,19 +181,25 @@ Route::get('/theme-products-page', function() {
 Route::get('/theme-single-page', function() {
     return view('my-theme-page.single-page');
 })->name('theme-single-page');
+*/
 
-Route::get('/theme-faq-page', function() {
-    return view('my-theme-page.faq-page');
-})->name('theme-faq-page');
+//controller
+Route::get('/theme-home-page', [ProductController::class, 'home'])->name('theme-home-page');
 
-Route::get('/theme-checkout-page', function() {
-    return view('my-theme-page.checkout-page');
-})->name('theme-checkout-page');
+Route::get('/theme-products-page', [ProductController::class, 'products'])->name('theme-products-page');
 
-Route::get('/theme-short-codes-page', function() {
-    return view('my-theme-page.short-codes-page');
-})->name('theme-short-codes-page');
+Route::get('/theme-single-page/{id}', [SingleController::class, 'show'])->name('theme-single-page');
 
-Route::get('/theme-about-page', function() {
-    return view('my-theme-page.about-page');
-})->name('theme-about-page');
+Route::get('/theme-products-page/{id}', [ProductController::class, 'page'])->name('theme-product-page');
+
+Route::get('/theme-household-page', [ProductController::class, 'household'])->name('theme-household-page');
+
+Route::get('/theme-personalcare-page', [ProductController::class, 'personalcare'])->name('theme-personalcare-page');
+
+Route::get('/theme-packagedfoods-page', [ProductController::class, 'packagedfoods'])->name('theme-packagedfoods-page');
+
+Route::get('/theme-groceries-page', [ProductController::class, 'groceries'])->name('theme-groceries-page');
+
+Route::get('/theme-gourmet-page', [ProductController::class, 'gourmet'])->name('theme-gourmet-page');
+
+Route::get('/theme-beverages-page', [ProductController::class, 'beverages'])->name('theme-beverages-page');

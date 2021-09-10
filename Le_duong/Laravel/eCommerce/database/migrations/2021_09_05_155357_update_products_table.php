@@ -14,7 +14,6 @@ class UpdateProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->integer('sale_off')->default(0);
             $table->bigInteger('user_id');
             $table->bigInteger('categories_id');
         });
@@ -28,7 +27,7 @@ class UpdateProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn(['sale_off','user_id','categories_id']);
+            $table->dropColumn(['user_id','categories_id']);
         });
     }
 }
