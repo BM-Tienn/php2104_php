@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,12 +50,19 @@ Route::get('/my-view-mvc', function() {
     }  
 });
 
-Route::get('/index', function() {
-    return view('mypage.home-page');
-});
-Route::get('/shop', function() {
-    return view('mypage.shop');
-});
+// Route::get('/index', function() {
+//     return view('mypage.home-page');
+// });
+Route::get('/index', [CategoryController::class, 'index']);
+
+// Route::get('/shop', function() {
+//     return view('mypage.shop');
+// });
+
+Route::get('/shop', [ShopController::class, 'shop']);
+Route::get('/product-details/{id}', [ProductController::class, 'show'])->name('product.show');
+Route::get('/category/{id}', [CategoryController::class, 'category'])->name('category.show');
+
 Route::get('/product-details', function() {
     return view('mypage.product-details');
 });

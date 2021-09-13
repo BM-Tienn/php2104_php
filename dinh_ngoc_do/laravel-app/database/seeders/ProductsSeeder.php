@@ -15,30 +15,69 @@ class ProductsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('products')->truncate();
+        /* DB::table('products')->truncate(); */
 
-        $data = [];
+        /* $data = [];
 
-        $faker = \Faker\Factory::create();
-
-        for ($i = 0; $i < 100; $i++) {
+        for($i = 0; $i < 25; $i++) {
             $data[] = [
-                'name' => $faker->name,
-                'image' => $faker->imageUrl($width = 640, $height = 480),
-                'rate' => rand(1, 5),
-                'price' => rand(10000, 1000000),
-                'quantity' => rand(10, 500),
-                'sold_out' => rand(0, 300),
-                'start_date' => Carbon::parse('2021-09-05'),
-                'start_sale_date' => Carbon::parse('2021-09-06'),
-                'sale_off' => rand(0, 30),
-                'description' => $faker->text,
-                'category_id' => rand(1, 4),
-                'user_id' => rand(1, 20),
-                'status' => rand(0, 99),
-                'is_public' => rand(0, 1),
+                'name' => 'T-Shirts A',
+                'title' => 'Fiding perfect t-shirt A',
+                'image' => 'cloth_1.jpg',
+                'price' => rand(1, 100),
+                'size' => rand(1, 4),
+                'description' => 'This is a orange T-Shirts A',
+                'category_id' => rand(1, 10),
+                'user_id' => rand(1,99),
             ];
-        }
+            
+        } */
+        
+        $data = [
+            [
+                'name' => 'T-Shirts A',
+                'title' => 'Fiding perfect t-shirt A',
+                'image' => 'cloth_1.jpg',
+                'price' => rand(1, 100),
+                'size' => rand(1, 4),
+                'description' => 'This is a orange T-Shirts A',
+                'category_id' => rand(1, 3),
+                'user_id' => rand(1,99),
+            ],
+    
+            [
+                'name' => 'T-Shirts B',
+                'title' => 'Fiding perfect t-shirt B',
+                'image' => 'cloth_2.jpg',
+                'price' => rand(1, 100),
+                'size' => rand(1, 4),
+                'description' => 'This is a blue T-Shirts B',
+                'category_id' => rand(1, 3),
+                'user_id' => rand(1,99),
+            ],
+    
+            [
+                'name' => 'Shoe A',
+                'title' => 'Fiding perfect shoe A',
+                'image' => 'shoe_1.jpg',
+                'price' => rand(1, 100),
+                'size' => rand(1, 4),
+                'description' => 'This is a blue shoe A',
+                'category_id' => rand(1, 3),
+                'user_id' => rand(1,99),
+            ],
+    
+            [
+                'name' => 'T-Shirts C',
+                'title' => 'Fiding perfect t-shirt C',
+                'image' => 'cloth_3.jpg',
+                'price' => rand(1, 100),
+                'size' => rand(1, 4),
+                'description' => 'This is a orange T-Shirts C',
+                'category_id' => rand(1, 3),
+                'user_id' => rand(1,99),
+            ],
+        ];
 
         DB::table('products')->insert($data);
     }

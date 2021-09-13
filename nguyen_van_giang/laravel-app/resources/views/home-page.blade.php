@@ -69,17 +69,29 @@
               </div>
             </div>
             <div class="col-md-6">
-              <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(/themes/vegefoods/images/category-1.jpg);">
+
+              @php
+                $categoryFruit = $categories->where('name', 'Fruits')->first();
+                $categoryVegetable = $categories->where('name', 'Vegetables')->first();
+                $categoryJuice = $categories->where('name', 'Juices')->first();
+                $categoryDried = $categories->where('name', 'Dried')->first();
+              @endphp
+
+              <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(/themes/vegefoods/images/{{ $categoryFruit->image }});">
                 <div class="text px-3 py-1">
                   <h2 class="mb-0">
-                    <a href="#">Fruits</a>
+                    <a href="{{ route('category.show', ['id' => $categoryFruit->id]) }}">
+                      {{ $categoryFruit->name }}
+                    </a>
                   </h2>
                 </div>
               </div>
-              <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(/themes/vegefoods/images/category-2.jpg);">
+              <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(/themes/vegefoods/images/{{ $categoryVegetable->image }});">
                 <div class="text px-3 py-1">
                   <h2 class="mb-0">
-                    <a href="#">Vegetables</a>
+                    <a href="{{ route('category.show', ['id' => $categoryVegetable->id]) }}">
+                      {{ $categoryVegetable->name }}
+                    </a>
                   </h2>
                 </div>
               </div>
@@ -87,17 +99,21 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(/themes/vegefoods/images/category-3.jpg);">
+          <div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(/themes/vegefoods/images/{{ $categoryJuice->image }});">
             <div class="text px-3 py-1">
               <h2 class="mb-0">
-                <a href="#">Juices</a>
+                <a href="{{ route('category.show', ['id' => $categoryJuice->id]) }}">
+                  {{ $categoryJuice->name }}
+                </a>
               </h2>
             </div>
           </div>
-          <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(/themes/vegefoods/images/category-4.jpg);">
+          <div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(/themes/vegefoods/images/{{ $categoryDried->image }});">
             <div class="text px-3 py-1">
               <h2 class="mb-0">
-                <a href="#">Dried</a>
+                <a href="{{ route('category.show', ['id' => $categoryDried->id]) }}">
+                  {{ $categoryDried->name }}
+                </a>
               </h2>
             </div>
           </div>
@@ -136,7 +152,7 @@
                   <p class="price">
                     @if ($product->sale_off > 0)
                       <span class="mr-2 price-dc">${{ $product->price }}</span>
-                      <span class="price-sale">${{ $product->price }}</span>
+                      <span class="price-sale">${{ $product->price - ($product->price * $product->sale_off / 100) }}</span>
                     @else
                       <span>${{ $product->price }}</span>
                     @endif
@@ -166,8 +182,6 @@
           </div>
         </div>
         @endforeach
-
-        {{ $products->links() }}
 
         <!-- <div class="col-md-6 col-lg-3 ftco-animate">
           <div class="product">
@@ -210,6 +224,9 @@
         </div> -->
 
       </div>
+
+      {{ $products->links() }}
+
     </div>
   </section>
   <section class="ftco-section img" style="background-image: url(/themes/vegefoods/images/bg_3.jpg);">

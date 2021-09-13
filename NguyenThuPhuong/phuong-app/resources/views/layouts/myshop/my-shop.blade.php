@@ -8,18 +8,18 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="vegefoods/css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="vegefoods/css/animate.css">
-    <link rel="stylesheet" href="vegefoods/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="vegefoods/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="vegefoods/css/magnific-popup.css">
-    <link rel="stylesheet" href="vegefoods/css/aos.css">
-    <link rel="stylesheet" href="vegefoods/css/ionicons.min.css">
-    <link rel="stylesheet" href="vegefoods/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="vegefoods/css/jquery.timepicker.css">
-    <link rel="stylesheet" href="vegefoods/css/flaticon.css">
-    <link rel="stylesheet" href="vegefoods/css/icomoon.css">
-    <link rel="stylesheet" href="vegefoods/css/style.css">
+    <link rel="stylesheet" href="/vegefoods/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/vegefoods/css/animate.css">
+    <link rel="stylesheet" href="/vegefoods/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/vegefoods/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/vegefoods/css/magnific-popup.css">
+    <link rel="stylesheet" href="/vegefoods/css/aos.css">
+    <link rel="stylesheet" href="/vegefoods/css/ionicons.min.css">
+    <link rel="stylesheet" href="/vegefoods/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/vegefoods/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="/vegefoods/css/flaticon.css">
+    <link rel="stylesheet" href="/vegefoods/css/icomoon.css">
+    <link rel="stylesheet" href="/vegefoods/css/style.css">
 </head>
 
 <body class="goto-here">
@@ -50,35 +50,35 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="home-page">Vegefoods</a>
+            <a class="navbar-brand" href="/home-page">Vegefoods</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="oi oi-menu"></span> Menu </button>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a href="home-page" class="nav-link">Home</a>
+                        <a href="/home-page" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="shop-ms">Shop</a>
-                            <a class="dropdown-item" href="wishlist-ms">Wishlist</a>
-                            <a class="dropdown-item" href="product-single-ms">Single Product</a>
-                            <a class="dropdown-item" href="cart-ms">Cart</a>
-                            <a class="dropdown-item" href="checkout-ms">Checkout</a>
+                            <a class="dropdown-item" href="/shop-ms">Shop</a>
+                            <a class="dropdown-item" href="/wishlist-ms">Wishlist</a>
+                            <a class="dropdown-item" href="/product-single-ms">Single Product</a>
+                            <a class="dropdown-item" href="/cart-ms">Cart</a>
+                            <a class="dropdown-item" href="/checkout-ms">Checkout</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a href="about-ms" class="nav-link">About</a>
+                        <a href="/about-ms" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog-ms" class="nav-link">Blog</a>
+                        <a href="/blog-ms" class="nav-link">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact-ms" class="nav-link">Contact</a>
+                        <a href="/contact-ms" class="nav-link">Contact</a>
                     </li>
                     <li class="nav-item cta cta-colored">
-                        <a href="cart-ms" class="nav-link">
+                        <a href="/cart-ms" class="nav-link">
                             <span class="icon-shopping_cart"></span>[0] </a>
                     </li>
                 </ul>
@@ -218,22 +218,22 @@
         <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" />
       </svg>
     </div>
-    <script src="vegefoods/js/jquery.min.js"></script>
-    <script src="vegefoods/js/jquery-migrate-3.0.1.min.js"></script>
-    <script src="vegefoods/js/popper.min.js"></script>
-    <script src="vegefoods/js/bootstrap.min.js"></script>
-    <script src="vegefoods/js/jquery.easing.1.3.js"></script>
-    <script src="vegefoods/js/jquery.waypoints.min.js"></script>
-    <script src="vegefoods/js/jquery.stellar.min.js"></script>
-    <script src="vegefoods/js/owl.carousel.min.js"></script>
-    <script src="vegefoods/js/jquery.magnific-popup.min.js"></script>
-    <script src="vegefoods/js/aos.js"></script>
-    <script src="vegefoods/js/jquery.animateNumber.min.js"></script>
-    <script src="vegefoods/js/bootstrap-datepicker.js"></script>
-    <script src="vegefoods/js/scrollax.min.js"></script>
+    <script src="/vegefoods/js/jquery.min.js"></script>
+    <script src="/vegefoods/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/vegefoods/js/popper.min.js"></script>
+    <script src="/vegefoods/js/bootstrap.min.js"></script>
+    <script src="/vegefoods/js/jquery.easing.1.3.js"></script>
+    <script src="/vegefoods/js/jquery.waypoints.min.js"></script>
+    <script src="/vegefoods/js/jquery.stellar.min.js"></script>
+    <script src="/vegefoods/js/owl.carousel.min.js"></script>
+    <script src="/vegefoods/js/jquery.magnific-popup.min.js"></script>
+    <script src="/vegefoods/js/aos.js"></script>
+    <script src="/vegefoods/js/jquery.animateNumber.min.js"></script>
+    <script src="/vegefoods/js/bootstrap-datepicker.js"></script>
+    <script src="/vegefoods/js/scrollax.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="vegefoods/js/google-map.js"></script>
-    <script src="vegefoods/js/main.js"></script>
+    <script src="/vegefoods/js/google-map.js"></script>
+    <script src="/vegefoods/js/main.js"></script>
 </body>
 
 </html>

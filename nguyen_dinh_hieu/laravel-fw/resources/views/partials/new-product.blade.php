@@ -9,39 +9,18 @@
             </div>
         </div>
         <div class="row">
+            @foreach ($category as $list_category)
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                 <div class="single-new-pro mb-30 text-center">
                     <div class="product-img">
-                        <img src="time-zone/assets/img/gallery/new_product1.png" alt="">
+                        <img src="/time-zone/assets/img/gallery/{{ $list_category->image }}" alt="">
                     </div>
                     <div class="product-caption">
-                        <h3><a href="time-zone/product_details.html">Thermo Ball Etip Gloves</a></h3>
-                        <span>$ 45,743</span>
+                        <h3><a href="{{ route('category.show', ['id' => $list_category->id]) }}">{{ $list_category->name }}</a></h3>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <div class="single-new-pro mb-30 text-center">
-                    <div class="product-img">
-                        <img src="time-zone/assets/img/gallery/new_product2.png" alt="">
-                    </div>
-                    <div class="product-caption">
-                        <h3><a href="time-zone/product_details.html">Thermo Ball Etip Gloves</a></h3>
-                        <span>$ 45,743</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <div class="single-new-pro mb-30 text-center">
-                    <div class="product-img">
-                        <img src="time-zone/assets/img/gallery/new_product3.png" alt="">
-                    </div>
-                    <div class="product-caption">
-                        <h3><a href="time-zone/product_details.html">Thermo Ball Etip Gloves</a></h3>
-                        <span>$ 45,743</span>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

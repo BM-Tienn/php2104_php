@@ -22,7 +22,7 @@ class ProductsSeeder extends Seeder
 
         $faker = \Faker\Factory::create();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $data[] = [
                 'name' => $faker->name,
                 'description' => $faker->text,
@@ -33,6 +33,7 @@ class ProductsSeeder extends Seeder
                 'price' => rand(100, 900),
                 'user_id' => 1,
                 'category_id' => 1,
+                'sale_off' => rand(0, 5)
             ];
         }
 

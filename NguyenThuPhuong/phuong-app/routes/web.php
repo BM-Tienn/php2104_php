@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -96,9 +98,7 @@ Route::get('/data', function () {
 });
 
 //
-Route::get('/home-page', function() {
-   return view('home-page');
-});
+Route::get('/home-page', [HomeController::class, 'index'])->name('home-page'); 
 
 Route::get('/about-ms', function() {
     return view('my-directory.about-ms');
@@ -118,12 +118,8 @@ Route::get('/about-ms', function() {
  Route::get('/contact-ms', function() {
     return view('my-directory.contact-ms');
  });
- Route::get('/product-single-ms', function() {
-    return view('my-directory.product-single-ms');
- });
- Route::get('/shop-ms', function() {
-    return view('my-directory.shop-ms');
- });
- Route::get('/wishlist-ms', function() {
-    return view('my-directory.wishlist-ms');
- });
+ Route::get('/product-single-ms/{id}', [HomeController::class, 'productSingle'])->name('product-single-ms');
+ 
+ Route::get('/shop-ms',[HomeController::class, 'shop'])->name('shop-ms');
+
+ Route::get('/wishlist-ms', [HomeController::class, 'wishlist'])->name('wishlist-ms');

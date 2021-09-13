@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Blade;
 use App\View\Components\MyShop;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,6 +32,8 @@ class AppServiceProvider extends ServiceProvider
         View::share('test', ['a', 'b', 'c']);
 
         Blade::component('my-shop', MyShop::class);
+
+        Paginator::defaultView('pagination.my-paginate');
     }
 
 }

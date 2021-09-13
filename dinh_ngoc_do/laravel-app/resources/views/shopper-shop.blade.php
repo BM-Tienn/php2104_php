@@ -43,7 +43,21 @@
             </div>
             <div class="row mb-5">
 
+              @foreach ($products as $product)
               <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+                <div class="block-4 text-center border">
+                  <figure class="block-4-image">
+                    <a href="{{ route('product.info', ['id' => $product->id]) }}"><img src="/themes/shopper_fashion/images/{{ $product->image }}" alt="Image placeholder" class="img-fluid"></a>
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="{{ route('product.info', ['id' => $product->id]) }}">{{ $product->name }}</a></h3>
+                    <p class="mb-0">{{ $product->title }}</p>
+                    <p class="text-primary font-weight-bold">${{ $product->price }}</p>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+              <!-- <div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
                 <div class="block-4 text-center border">
                   <figure class="block-4-image">
                     <a href="shop-single.html"><img src="/themes/shopper_fashion/images/cloth_1.jpg" alt="Image placeholder" class="img-fluid"></a>
@@ -189,11 +203,13 @@
                     <p class="text-primary font-weight-bold">$50</p>
                   </div>
                 </div>
-              </div>
-
+              </div> -->
 
             </div>
-            <div class="row" data-aos="fade-up">
+            
+            {{ $products->links('partials.my-paginate') }}
+
+            <!-- <div class="row" data-aos="fade-up">
               <div class="col-md-12 text-center">
                 <div class="site-block-27">
                   <ul>
@@ -207,7 +223,7 @@
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="col-md-3 order-1 mb-5 mb-md-0">

@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SingleController;
-
-
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -203,3 +202,7 @@ Route::get('/theme-groceries-page', [ProductController::class, 'groceries'])->na
 Route::get('/theme-gourmet-page', [ProductController::class, 'gourmet'])->name('theme-gourmet-page');
 
 Route::get('/theme-beverages-page', [ProductController::class, 'beverages'])->name('theme-beverages-page');
+
+Route::get('/theme-categories-page/{id}', [CategoryController::class, 'show'])->name('theme-categories-page.show');
+
+Route::get('/theme-categories-page', [CategoryController::class, 'index'])->name('theme-categories-page');

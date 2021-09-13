@@ -55,10 +55,11 @@
                     <!-- card one -->
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <div class="row">
+                        @foreach ($products as $product)
                             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                 <div class="single-popular-items mb-50 text-center">
                                     <div class="popular-img">
-                                        <img src="/time-zone/assets/img/gallery/popular1.png" alt="">
+                                        <img src="/time-zone/assets/img/gallery/{{ $product->image_url }}" alt="">
                                         <div class="img-cap">
                                             <span>Add to cart</span>
                                         </div>
@@ -67,12 +68,15 @@
                                         </div>
                                     </div>
                                     <div class="popular-caption">
-                                        <h3><a href="product_details.html">Thermo Ball Etip Gloves</a></h3>
-                                        <span>$ 45,743</span>
+                                        <h3><a href="{{ route('product.show', ['id' => $product->id]) }}">{{ $product->name }}</a></h3>
+                                        <span>$ {{ $product->price }}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                        @endforeach
+    
+                        {{ $products->links('partials.pagination') }}
+                            <!-- <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                                 <div class="single-popular-items mb-50 text-center">
                                     <div class="popular-img">
                                         <img src="/time-zone/assets/img/gallery/popular2.png" alt="">
@@ -156,7 +160,7 @@
                                         <span>$ 45,743</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- Card two -->

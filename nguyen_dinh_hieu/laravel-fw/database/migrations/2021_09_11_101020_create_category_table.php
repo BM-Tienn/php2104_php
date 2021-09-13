@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Update2ColumsProducts extends Migration
+class CreateCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class Update2ColumsProducts extends Migration
      */
     public function up()
     {
-        //
-        Schema::table('products', function(Blueprint $table) {
-            $table->dropColumn('rate');
+        Schema::create('category', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('name');
+            $table->text('image');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +28,6 @@ class Update2ColumsProducts extends Migration
      */
     public function down()
     {
-        Schema::table('products', function(Blueprint $table) {
-            $table->integer('rate')->default(1)->after('name');
-        });
+        Schema::dropIfExists('category');
     }
 }

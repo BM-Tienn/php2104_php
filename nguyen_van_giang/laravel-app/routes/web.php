@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,6 +62,9 @@ Route::name('admin.')->prefix('admin')->middleware(['admin'])->group(function ()
 
 Route::get('/home-page', [HomeController::class, 'index'])->name('home-page');
 Route::get('/products/{id}', [ProductController::class, 'show'])->name('product.show');
+
+Route::get('/categories/{id}', [CategoryController::class, 'index'])->name('category.show');
+
 
 Route::get('/child-page', function() {
     return view('my-directory.child-page');

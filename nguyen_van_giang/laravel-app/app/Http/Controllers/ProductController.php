@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
+    protected $productModel;
+
+    public function __construct(Product $product)
+    {
+        $this->productModel = $product;
+    }
+
     public function show($id)
     {
-        $product = DB::table('products')->find($id);
-
-        if (!$product) {
-            return redirect('home-page');
-        }
+        $product = $this->productModel->findOrFaild($id);
 
         return view('products.show', ['product' => $product]);
     }

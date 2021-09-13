@@ -5,13 +5,18 @@
     <main>
         <!-- Hero Area Start-->
         <div class="slider-area ">
-            <div class="single-slider slider-height2 d-flex align-items-center">
+            <div class="single-slider slider-height2 d-flex align-items-center" style="background-image: none;">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap text-center">
-                                <h2>Watch Shop</h2>
-                            </div>
+                        <div class="col-sm-7">
+                            <img src="/time-zone/assets/img/gallery/{{ $product->image_url }}" alt="">
+                        </div>
+                        <div class="col-sm-3">
+                            <h2>{{ $product->name }}</h2>
+                            <p>{{ $product->descripti }}</p>
+                            <h3> Price: ${{ $product->price }}</h3>
+                            <h4>Quantity: {{ $product->quantity }}</h4>
+                            <h4>Status: </h4>
                         </div>
                     </div>
                 </div>
@@ -50,9 +55,9 @@
                                 <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
                                 <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                             </div>
-                            <p>$5</p>
+                            <p>${{ $product->price }}</p>
                         </div>
-                    <div class="add_to_cart">
+                    <div class="add_to_cart" style="margin-left: 22px;">
                         <a href="#" class="btn_3">add to cart</a>
                     </div>
                     </div>
