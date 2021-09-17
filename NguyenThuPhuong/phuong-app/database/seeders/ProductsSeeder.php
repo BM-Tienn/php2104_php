@@ -3,9 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Str;
-use Illuminate\Support\Facades\DB;
-
+use App\Models\Product;
 class ProductsSeeder extends Seeder
 {
     /**
@@ -16,13 +14,13 @@ class ProductsSeeder extends Seeder
     public function run()
     {
 
-        DB::table('products')->truncate();
+       Product::truncate();
 
         $data = [];
 
         $faker = \Faker\Factory::create();
 
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $data[] = [
                 'name' => $faker->name,
                 'description' => $faker->text,
@@ -32,11 +30,12 @@ class ProductsSeeder extends Seeder
                 'sold' => rand(1, 100),
                 'price' => rand(100, 900),
                 'user_id' => 1,
-                'category_id' => 1,
+                'is_public' => 1,
+                'category_id' => rand(1, 4),
                 'sale_off' => rand(0, 5)
             ];
         }
 
-        DB::table('products')->insert($data);
+       Product::insert($data);
     }
 }

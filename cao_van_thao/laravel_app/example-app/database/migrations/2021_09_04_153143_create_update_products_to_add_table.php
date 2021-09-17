@@ -18,6 +18,10 @@ class CreateUpdateProductsToAddTable extends Migration
             $table->string('image');
             $table->integer('nhan_vien_id');
             $table->dateTime('posting_time');
+            $table->integer('sale_off');
+            $table->float('price_off');
+            $table->integer('is_public');
+            $table->bigInteger('categories_id')->references('id')->on('categories');
         });
     }
 

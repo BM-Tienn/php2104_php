@@ -27,6 +27,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'CATEGORIES',
+                'category_id' => 1 ,
             ],
 
             [
@@ -39,6 +40,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'CATEGORIES',
+                'category_id' => 1 ,
             ],
 
             [
@@ -51,6 +53,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'CATEGORIES',
+                'category_id' => 1 ,
             ],
 
             [
@@ -63,6 +66,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'CATEGORIES',
+                'category_id' => 1 ,
             ],
 
             [
@@ -75,6 +79,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'CATEGORIES',
+                'category_id' => 1 ,
             ],
 
             [
@@ -87,6 +92,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'CATEGORIES',
+                'category_id' => 1 ,
             ],
 
             [
@@ -99,6 +105,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'CATEGORIES',
+                'category_id' => 1 ,
             ],
 
             [
@@ -111,6 +118,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'CATEGORIES',
+                'category_id' => 1 ,
             ],
 
             [
@@ -123,6 +131,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'CATEGORIES',
+                'category_id' => 1 ,
             ],
             
             [
@@ -135,6 +144,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PERSONALCARE',
+                'category_id' => 2 ,
             ],
 
             [
@@ -147,6 +157,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PERSONALCARE',
+                'category_id' => 2 ,
             ],
 
             [
@@ -159,6 +170,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PERSONALCARE',
+                'category_id' => 2 ,
             ],
 
             [
@@ -171,6 +183,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PERSONALCARE',
+                'category_id' => 2 ,
             ],
 
             [
@@ -183,6 +196,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PERSONALCARE',
+                'category_id' => 2 ,
             ],
 
             [
@@ -195,6 +209,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PERSONALCARE',
+                'category_id' => 2 ,
             ],
 
             [
@@ -207,6 +222,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PERSONALCARE',
+                'category_id' => 2 ,
             ],
 
             [
@@ -219,6 +235,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PERSONALCARE',
+                'category_id' => 2 ,
             ],
 
             [
@@ -231,6 +248,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PERSONALCARE',
+                'category_id' => 2 ,
             ],
             
             [
@@ -246,6 +264,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PACKAGEDFOODS',
+                'category_id' => 3 ,
             ],
 
             [
@@ -261,6 +280,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PACKAGEDFOODS',
+                'category_id' => 3 ,
             ],
 
             [
@@ -276,6 +296,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PACKAGEDFOODS',
+                'category_id' => 3 ,
             ],
 
             [
@@ -291,6 +312,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PACKAGEDFOODS',
+                'category_id' => 3 ,
             ],
 
             [
@@ -306,6 +328,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PACKAGEDFOODS',
+                'category_id' => 3 ,
             ],
 
             [
@@ -321,6 +344,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PACKAGEDFOODS',
+                'category_id' => 3 ,
             ],
 
             [
@@ -336,6 +360,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PACKAGEDFOODS',
+                'category_id' => 3 ,
             ],
 
             [
@@ -351,6 +376,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PACKAGEDFOODS',
+                'category_id' => 3 ,
             ],
 
             [
@@ -366,6 +392,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'PACKAGEDFOODS',
+                'category_id' => 3 ,
             ],
 
             [
@@ -381,6 +408,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'HOUSEHOLD',
+                'category_id' => 4 ,
             ],
 
             [
@@ -396,6 +424,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'HOUSEHOLD',
+                'category_id' => 4 ,
             ],
 
             [
@@ -411,6 +440,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'HOUSEHOLD',
+                'category_id' => 4 ,
             ],
 
             [
@@ -426,6 +456,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'HOUSEHOLD',
+                'category_id' => 4 ,
             ],
 
             [
@@ -441,6 +472,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'HOUSEHOLD',
+                'category_id' => 4 ,
             ],
 
             [
@@ -456,6 +488,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'HOUSEHOLD',
+                'category_id' => 4 ,
             ],
 
             [
@@ -471,6 +504,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'HOUSEHOLD',
+                'category_id' => 4 ,
             ],
 
             [
@@ -486,6 +520,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'HOUSEHOLD',
+                'category_id' => 4 ,
             ],
             
             [
@@ -501,6 +536,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'HOUSEHOLD',
+                'category_id' => 4 ,
             ],
             
             [
@@ -516,6 +552,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'GOURMET',
+                'category_id' => 1 ,
             ],
 
             [
@@ -531,6 +568,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'GOURMET',
+                'category_id' => 1 ,
             ],
             
             [
@@ -546,6 +584,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'GOURMET',
+                'category_id' => 1 ,
             ],
 
             [
@@ -561,6 +600,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'GOURMET',
+                'category_id' => 1 ,
             ],
 
             [
@@ -576,6 +616,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'GOURMET',
+                'category_id' => 1 ,
             ],
 
             [
@@ -591,6 +632,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'GOURMET',
+                'category_id' => 1 ,
             ],
 
             [
@@ -606,6 +648,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'GOURMET',
+                'category_id' => 1 ,
             ],
 
             [
@@ -621,6 +664,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'GOURMET',
+                'category_id' => 1 ,
             ],
 
             [
@@ -636,6 +680,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'GOURMET',
+                'category_id' => 1 ,
             ],
 
             [
@@ -651,6 +696,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'BEVERAGES',
+                'category_id' => 2 ,
             ],
 
             [
@@ -666,6 +712,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'BEVERAGES',
+                'category_id' => 2 ,
             ],
 
             [
@@ -681,6 +728,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'BEVERAGES',
+                'category_id' => 2 ,
             ],
             
             [
@@ -696,6 +744,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'BEVERAGES',
+                'category_id' => 2 ,
             ],
 
             [
@@ -711,6 +760,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'BEVERAGES',
+                'category_id' => 2 ,
             ],
 
             [
@@ -726,6 +776,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'BEVERAGES',
+                'category_id' => 2 ,
             ],
 
             [
@@ -741,6 +792,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'BEVERAGES',
+                'category_id' => 2 ,
             ],
 
             [
@@ -756,6 +808,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'BEVERAGES',
+                'category_id' => 2 ,
             ],
 
             [
@@ -771,6 +824,7 @@ class ShopSeeder extends Seeder
                 'quantity' => rand(10,100),
                 'status' => rand(0, 1),
                 'classify' => 'BEVERAGES',
+                'category_id' => 2 ,
             ],
         ];
 

@@ -1,4 +1,16 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/themes/dailyShop/404.html": "/themes/dailyShop/404.html",
+    "/themes/dailyShop/account.html": "/themes/dailyShop/account.html",
+    "/themes/dailyShop/blog-archive-2.html": "/themes/dailyShop/blog-archive-2.html",
+    "/themes/dailyShop/blog-archive.html": "/themes/dailyShop/blog-archive.html",
+    "/themes/dailyShop/blog-single.html": "/themes/dailyShop/blog-single.html",
+    "/themes/dailyShop/cart.html": "/themes/dailyShop/cart.html",
+    "/themes/dailyShop/checkout.html": "/themes/dailyShop/checkout.html",
+    "/themes/dailyShop/contact.html": "/themes/dailyShop/contact.html",
+    "/themes/dailyShop/index.html": "/themes/dailyShop/index.html",
+    "/themes/dailyShop/product-detail.html": "/themes/dailyShop/product-detail.html",
+    "/themes/dailyShop/product.html": "/themes/dailyShop/product.html",
+    "/themes/dailyShop/wishlist.html": "/themes/dailyShop/wishlist.html"
 }

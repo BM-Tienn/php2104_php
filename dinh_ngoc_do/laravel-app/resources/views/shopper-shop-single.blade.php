@@ -16,6 +16,9 @@
           <div class="col-md-6">
             <h2 class="text-black">{{ $product->name }}</h2>
             <p>{{ $product->description }}</p>
+            <p>Color: </p>
+            <p>Quantity: </p>
+            <p>Category: </p>
             <p class="mb-4"></p>
             <p><strong class="text-primary h4">${{ $product->price }}</strong></p>
             <div class="mb-1 d-flex">
@@ -61,7 +64,21 @@
         <div class="row">
           <div class="col-md-12">
             <div class="nonloop-block-3 owl-carousel">
+              @foreach ($products as $product)
               <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="/themes/shopper_fashion/images/{{ $product->image }}" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">{{ $product->name }}</a></h3>
+                    <p class="mb-0">{{ $product->title }}</p>
+                    <p class="text-primary font-weight-bold">${{ $product->price }}</p>
+                  </div>
+                </div>
+              </div>
+              @endforeach
+              <!-- <div class="item">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
                     <img src="/themes/shopper_fashion/images/cloth_1.jpg" alt="Image placeholder" class="img-fluid">
@@ -120,7 +137,7 @@
                     <p class="text-primary font-weight-bold">$50</p>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>

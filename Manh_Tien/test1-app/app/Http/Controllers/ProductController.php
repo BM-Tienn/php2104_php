@@ -16,6 +16,14 @@ class ProductController extends Controller
         return view('my-theme-page.products-page', ['products' => $products]);
     } 
 
+    public function show ()
+    {
+        $products = DB::table('shop_products')
+                    ->get();
+        
+        return view('admin/products/product-index', ['products' => $products]);
+    }
+    
     public function home ()
     {
         $products = DB::table('shop_products')

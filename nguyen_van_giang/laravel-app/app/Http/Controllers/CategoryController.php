@@ -21,8 +21,7 @@ class CategoryController extends Controller
     {
         $category = $this->categoryModel->findOrFail($id);
 
-        $products = $this->productModel
-            ->where('category_id', $category->id)
+        $products = $category->products()
             ->where('is_public', config('product.public'))
             ->orderBy('sale_off', 'DESC')
             ->orderBy('price', 'DESC')

@@ -206,3 +206,17 @@ Route::get('/theme-beverages-page', [ProductController::class, 'beverages'])->na
 Route::get('/theme-categories-page/{id}', [CategoryController::class, 'show'])->name('theme-categories-page.show');
 
 Route::get('/theme-categories-page', [CategoryController::class, 'index'])->name('theme-categories-page');
+
+//admin
+Route::get('/admin/dashboard', function() {
+    return view('admin/dashboard');
+})->name('dashboard');
+
+/* 
+Route::get('/admin/products', function() {
+    return view('admin/products/product-index');
+})->name('products');
+*/
+Route::get('/admin/products',[ProductController::class, 'show'])->name('admin-product');
+
+Route::get('/admin/category',[CategoryController::class, 'adminshow'])->name('admin-category');

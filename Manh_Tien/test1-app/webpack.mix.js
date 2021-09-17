@@ -21,6 +21,7 @@ mix.postCss('resources/themes/web/css/bootstrap.css','public/css/mypage');
 mix.postCss('resources/themes/web/css/font-awesome.css','public/css/mypage');
 mix.postCss('resources/themes/web/css/skdslider.css','public/css/mypage');
 mix.postCss('resources/themes/web/css/style.css','public/css/mypage');
+mix.postCss('resources/themes/web/css/admin.css','public/css/mypage');
 mix.js('resources/themes/web/js/bootstrap.min.js','public/js/mypage');
 mix.js('resources/themes/web/js/easing.js','public/js/mypage');
 mix.js('resources/themes/web/js/jquery-1.11.1.min.js','public/js/mypage');

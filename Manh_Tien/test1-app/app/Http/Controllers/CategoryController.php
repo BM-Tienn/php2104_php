@@ -29,14 +29,22 @@ class CategoryController extends Controller
     {
         $category = $this->categoryModel->findOrFail($id);
 
-        $products = $this->productModel
-            ->where('classify',$category->classify)
+        $products = $category->products()
+            ->where('category_id',$id)
             ->paginate(config('product.paginate'));
             
         return view('my-theme-page.categories-page', [
             'category' => $category,
             'products' => $products,
         ]);
+    }
+
+    public function adminshow ()
+    {
+        $category = $this->categoryModel
+                    ->get();
+        
+        return view('admin/category/category-index', ['category' => $category]);
     }
 
 }

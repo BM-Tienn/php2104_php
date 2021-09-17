@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use DB;
+use App\Models\Product;
 use Carbon\Carbon;
 
 class ProductsSeeder extends Seeder
@@ -79,6 +79,6 @@ class ProductsSeeder extends Seeder
             ],
         ];
 
-        DB::table('products')->insert($data);
+        Product::insert($data);
     }
 }

@@ -285,7 +285,20 @@
                   </div>
                 </div>
                 <div class="row">
+                  @foreach ($categories as $category)
                   <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
+                    <a class="block-2-item" href="{{ route('shopper.home') }}">
+                      <figure class="image">
+                        <img src="/themes/shopper_fashion/images/{{ $category->image }}" alt="" class="img-fluid">
+                      </figure>
+                      <div class="text">
+                        <span class="text-uppercase">Collections</span>
+                        <h3>{{ $category->name }}</h3>
+                      </div>
+                    </a>
+                  </div>
+                  @endforeach
+                  <!-- <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
                     <a class="block-2-item" href="#">
                       <figure class="image">
                         <img src="/themes/shopper_fashion/images/women.jpg" alt="" class="img-fluid">
@@ -317,7 +330,7 @@
                         <h3>Men</h3>
                       </div>
                     </a>
-                  </div>
+                  </div> -->
                 </div>
               
             </div>

@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Order;
+use App\Models\OrderProduct;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 
@@ -20,6 +22,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ProductsSeeder::class,
             CategoriesSeeder::class,
+            ProfileSeeder::class,
+            OrderSeeder::class,
+            OrderProductSeeder::class,
         ]);
     }
 }

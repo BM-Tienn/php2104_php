@@ -2,5 +2,6 @@
 
  return [
     'public' => 1,
-    'paginate' => 8,
+    'paginate' => 12,
+    'paginate1' => 4,
 ];

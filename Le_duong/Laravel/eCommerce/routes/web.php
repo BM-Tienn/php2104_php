@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\View;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ProductDetailsController;
-use App\Http\Controllers\PhotosController;
-use App\Http\Controllers\BannerController;
-use App\Http\Controllers\SliderController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PhotoSliderController;
+use App\Http\Controllers\PhotoBannerController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ShopController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,45 +18,52 @@ use App\Http\Controllers\SliderController;
 |
 */
 
-Route::get('/',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'index'])->name('home');
 
-Route::get('/product_details/{id}',[ProductDetailsController::class,'show'])
-    ->name('product_details');
+//Category
+Route::resource('categories',CategoryController::class);
 
-Route::get('/upload/product',[PhotosController::class,'create']);
-Route::post('/upload/product',[PhotosController::class,'store']);
+//Slider
+Route::resource('slider',PhotoSliderController::class);
 
-Route::get('/upload/banner',[BannerController::class,'create']);
-Route::post('/upload/banner',[BannerController::class,'store']);
+//Banner
+Route::resource('banner',PhotoBannerController::class);
 
-Route::get('/upload/slider',[SliderController::class,'create']);
-Route::post('/upload/slider',[SliderController::class,'store']);
+//Product
+Route::resource('products',ProductsController::class);
 
-Route::get('/admin',function () {
-    return view('pages.login');
-});
+//Shop
+Route::get('/shops',[ShopController::class,'index'])->name('shops');
 
-Route::get('/products',function () {
-    if(View::exists('pages.products')) {
-        return view('pages.products');
-    }
-})->name('products');
 
-//Route::get('/product_details',function () {
-//    if(View::exists('pages.product_details')) {
-//        return view('pages.product_details');
-//    }
-//})->name('product_details');
+Route::get('/about', function () {
+    return view('pages.about');
+})->name('about');
 
-Route::get('/checkout',function () {
-    if(View::exists('pages.checkout')) {
-        return view('pages.checkout');
-    }
-})->name('checkout');
+Route::get('/blog', function () {
+    return view('pages.blog');
+})->name('blog');
 
-Route::get('/contact',function () {
-    if(View::exists('pages.contact')) {
-        return view('pages.contact');
-    }
+Route::get('/blog_details', function () {
+    return view('pages.blog_details');
+})->name('blog_details');
+
+Route::get('/contact', function () {
+    return view('pages.contact');
 })->name('contact');
-require __DIR__.'/auth.php';
+
+Route::get('/shops_details', function () {
+    return view('pages.shops_details');
+})->name('shops_details');
+
+Route::get('/shoping_cart', function () {
+    return view('pages.shoping_cart');
+})->name('shoping_cart');
+
+Route::get('/dashboard', function () {
+    return view ('dashboard');
+})->name('dashboard');
+
+
+
+

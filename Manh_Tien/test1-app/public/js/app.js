@@ -21060,6 +21060,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/themes/web/css/admin.css":
+/*!********************************************!*\
+  !*** ./resources/themes/web/css/admin.css ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/app.css":
 /*!*******************************!*\
   !*** ./resources/css/app.css ***!
@@ -21435,6 +21448,7 @@ process.umask = function() { return 0; };
 /******/ 			"css/mypage/bootstrap": 0,
 /******/ 			"css/myapp": 0,
 /******/ 			"css/app": 0,
+/******/ 			"css/mypage/admin": 0,
 /******/ 			"css/mypage/style": 0
 /******/ 		};
 /******/ 		
@@ -21485,13 +21499,14 @@ process.umask = function() { return 0; };
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/style"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/style"], () => (__webpack_require__("./resources/css/app.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/style"], () => (__webpack_require__("./resources/css/myapp.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/style"], () => (__webpack_require__("./resources/themes/web/css/bootstrap.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/style"], () => (__webpack_require__("./resources/themes/web/css/font-awesome.css")))
-/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/style"], () => (__webpack_require__("./resources/themes/web/css/skdslider.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/style"], () => (__webpack_require__("./resources/themes/web/css/style.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/admin","css/mypage/style"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/admin","css/mypage/style"], () => (__webpack_require__("./resources/css/app.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/admin","css/mypage/style"], () => (__webpack_require__("./resources/css/myapp.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/admin","css/mypage/style"], () => (__webpack_require__("./resources/themes/web/css/bootstrap.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/admin","css/mypage/style"], () => (__webpack_require__("./resources/themes/web/css/font-awesome.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/admin","css/mypage/style"], () => (__webpack_require__("./resources/themes/web/css/skdslider.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/admin","css/mypage/style"], () => (__webpack_require__("./resources/themes/web/css/style.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/mypage/skdslider","css/mypage/font-awesome","css/mypage/bootstrap","css/myapp","css/app","css/mypage/admin","css/mypage/style"], () => (__webpack_require__("./resources/themes/web/css/admin.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

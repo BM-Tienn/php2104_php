@@ -129,9 +129,12 @@
                         </div>
                     </div>
                 </div>
-                
                 @endforeach
-                <div ></div>
+                <div class="col-sm-12 ftco-animate text-center">
+                    <p>
+                        <a href="/shop-ms" class="btn btn-primary">See More</a>
+                    </p>
+                </div>
             </div>
         </div>
     </section>

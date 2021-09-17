@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,8 +120,10 @@ Route::get('/about-ms', function() {
  Route::get('/contact-ms', function() {
     return view('my-directory.contact-ms');
  });
- Route::get('/product-single-ms/{id}', [HomeController::class, 'productSingle'])->name('product-single-ms');
+ Route::get('/product-single-ms/{id}', [ProductController::class, 'productSingle'])->name('product-single-ms');
  
- Route::get('/shop-ms',[HomeController::class, 'shop'])->name('shop-ms');
+ Route::get('/shop-ms',[ProductController::class, 'shop'])->name('shop-ms');
 
- Route::get('/wishlist-ms', [HomeController::class, 'wishlist'])->name('wishlist-ms');
+ Route::get('/wishlist-ms', [ProductController::class, 'wishlist'])->name('wishlist-ms');
+
+ Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('category.show');

@@ -16,7 +16,7 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $product = $this->productModel->findOrFaild($id);
+        $product = $this->productModel->findOrFail($id);
 
         return view('products.show', ['product' => $product]);
     }

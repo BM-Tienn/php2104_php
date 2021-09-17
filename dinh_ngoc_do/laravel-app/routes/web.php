@@ -69,7 +69,7 @@ Route::prefix('admin.')->group(function () {
 
 Route::get('/shopper_fashion/home', function() {
     return view('home-page');
-}); 
+})->name('shopper.home'); 
 
 Route::get('/shopper_fashion/shop', [ShopController::class, 'shopIndex'])->name('shop.index');
 
