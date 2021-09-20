@@ -11,5 +11,20 @@
     "/themes/vegefoods/prepros-6.config": "/themes/vegefoods/prepros-6.config",
     "/themes/vegefoods/product-single.html": "/themes/vegefoods/product-single.html",
     "/themes/vegefoods/shop.html": "/themes/vegefoods/shop.html",
-    "/themes/vegefoods/wishlist.html": "/themes/vegefoods/wishlist.html"
+    "/themes/vegefoods/wishlist.html": "/themes/vegefoods/wishlist.html",
+    "/themes/adminlte/.babelrc.js": "/themes/adminlte/.babelrc.js",
+    "/themes/adminlte/.bundlewatch.config.json": "/themes/adminlte/.bundlewatch.config.json",
+    "/themes/adminlte/.eslintrc.json": "/themes/adminlte/.eslintrc.json",
+    "/themes/adminlte/.gitpod.yml": "/themes/adminlte/.gitpod.yml",
+    "/themes/adminlte/.lgtm.yml": "/themes/adminlte/.lgtm.yml",
+    "/themes/adminlte/CODE_OF_CONDUCT.md": "/themes/adminlte/CODE_OF_CONDUCT.md",
+    "/themes/adminlte/README.md": "/themes/adminlte/README.md",
+    "/themes/adminlte/composer.json": "/themes/adminlte/composer.json",
+    "/themes/adminlte/iframe.html": "/themes/adminlte/iframe.html",
+    "/themes/adminlte/index.html": "/themes/adminlte/index.html",
+    "/themes/adminlte/index2.html": "/themes/adminlte/index2.html",
+    "/themes/adminlte/index3.html": "/themes/adminlte/index3.html",
+    "/themes/adminlte/package-lock.json": "/themes/adminlte/package-lock.json",
+    "/themes/adminlte/package.json": "/themes/adminlte/package.json",
+    "/themes/adminlte/starter.html": "/themes/adminlte/starter.html"
 }

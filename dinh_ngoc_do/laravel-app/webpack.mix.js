@@ -18,3 +18,5 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
 ]);
 
 mix.copyDirectory('resources/themes/shopper_fashion', 'public/themes/shopper_fashion');
+
+mix.copyDirectory('resources/themes/admin', 'public/themes/admin');

@@ -6,15 +6,15 @@ use Illuminate\View\Component;
 
 class ModalProduct extends Component
 {
-    public $productModal;
+    public $product;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($productModal)
+    public function __construct($product)
     {
-        $this->productModal = $productModal;
+        $this->product = $product;
     }
 
     /**

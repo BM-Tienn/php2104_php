@@ -9,5 +9,20 @@
     "/themes/shopper_fashion/prepros-6.config": "/themes/shopper_fashion/prepros-6.config",
     "/themes/shopper_fashion/shop-single.html": "/themes/shopper_fashion/shop-single.html",
     "/themes/shopper_fashion/shop.html": "/themes/shopper_fashion/shop.html",
-    "/themes/shopper_fashion/thankyou.html": "/themes/shopper_fashion/thankyou.html"
+    "/themes/shopper_fashion/thankyou.html": "/themes/shopper_fashion/thankyou.html",
+    "/themes/admin/.babelrc.js": "/themes/admin/.babelrc.js",
+    "/themes/admin/.bundlewatch.config.json": "/themes/admin/.bundlewatch.config.json",
+    "/themes/admin/.eslintrc.json": "/themes/admin/.eslintrc.json",
+    "/themes/admin/.gitpod.yml": "/themes/admin/.gitpod.yml",
+    "/themes/admin/.lgtm.yml": "/themes/admin/.lgtm.yml",
+    "/themes/admin/CODE_OF_CONDUCT.md": "/themes/admin/CODE_OF_CONDUCT.md",
+    "/themes/admin/composer.json": "/themes/admin/composer.json",
+    "/themes/admin/iframe.html": "/themes/admin/iframe.html",
+    "/themes/admin/index.html": "/themes/admin/index.html",
+    "/themes/admin/index2.html": "/themes/admin/index2.html",
+    "/themes/admin/index3.html": "/themes/admin/index3.html",
+    "/themes/admin/package-lock.json": "/themes/admin/package-lock.json",
+    "/themes/admin/package.json": "/themes/admin/package.json",
+    "/themes/admin/README.md": "/themes/admin/README.md",
+    "/themes/admin/starter.html": "/themes/admin/starter.html"
 }

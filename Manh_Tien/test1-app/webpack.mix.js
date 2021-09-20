@@ -30,3 +30,5 @@ mix.js('resources/themes/web/js/move-top.js','public/js/mypage');
 mix.js('resources/themes/web/js/responsiveslides.min.js','public/js/mypage');
 mix.js('resources/themes/web/js/skdslider.min.js','public/js/mypage');
 mix.copyDirectory('resources/themes/web/images','public/images');
+
+mix.copyDirectory('vendor/almasaeed2010/adminlte','public/themes/adminlte')

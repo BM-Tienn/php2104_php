@@ -1,5 +1,5 @@
 <div class="row isotope-grid">
-    @foreach($products as $product)
+    @forelse($products as $product)
         <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item {{$product->category}} ">
             <!-- Block2 -->
             <div class="block2">
@@ -30,5 +30,13 @@
                 </div>
             </div>
         </div>
-    @endforeach
+        <!--Start Modal1 -->
+        <x-modal-product :product="$product"/>
+    @empty
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="alert alert-primary" role="alert">
+                Product not found
+            </div>
+        </div>
+    @endforelse
 </div>

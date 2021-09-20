@@ -17,7 +17,7 @@
                             <a href="{{route('home')}}">Home</a>
                         </li>
 
-                        <li class="active-menu">
+                        <li >
                             <a href="{{route('shops')}}">Shop</a>
                         </li>
 

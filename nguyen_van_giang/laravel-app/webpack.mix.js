@@ -18,3 +18,4 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
 ]);
 
 mix.copyDirectory('resources/themes/vegefoods', 'public/themes/vegefoods');
+mix.copyDirectory('vendor/almasaeed2010/adminlte', 'public/themes/adminlte');

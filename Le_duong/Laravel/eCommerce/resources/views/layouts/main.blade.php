@@ -60,7 +60,7 @@
 
 
 <!-- Footer -->
-<x-footer/>
+<x-footer :categories="$categories"/>
 
 
 <!-- Back to top -->

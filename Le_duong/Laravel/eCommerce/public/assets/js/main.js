@@ -268,15 +268,35 @@
 
     /*==================================================================
     [ Show modal1 ]*/
-    $('.js-show-modal1').on('click',function(e){
-        e.preventDefault();
-        $('.js-modal1').addClass('show-modal1');
-    });
-
-    $('.js-hide-modal1').on('click',function(){
-        $('.js-modal1').removeClass('show-modal1');
-    });
+    // $('.js-show-modal1').on('click',function(e){
+    //     e.preventDefault();
+    //     $('.js-modal1').addClass('show-modal1');
+    // });
+    //
+    // $('.js-hide-modal1').on('click',function(){
+    //     $('.js-modal1').removeClass('show-modal1');
+    // });
 
 
 
 })(jQuery);
+
+/*==================================================================
+   [ Show/Close Modal Product ]*/
+const buttonShowModal = document.getElementsByClassName('js-show-modal1')
+const buttonCloseModal = document.getElementsByClassName('js-hide-modal1')
+const modal = document.getElementsByClassName('js-modal1')
+
+for(let i = 0;i<buttonShowModal.length;i++) {
+    buttonShowModal[i].onclick = function(e) {
+        e.preventDefault();
+        modal[i].classList.add('show-modal1')
+    }
+}
+
+for(let x = 0;x<buttonCloseModal.length;x++) {
+    buttonCloseModal[x].onclick = function(e) {
+        e.preventDefault()
+        modal[x].classList.remove('show-modal1')
+    }
+}

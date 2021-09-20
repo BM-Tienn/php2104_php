@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use DB;
+use App\Models\Category;
 
 class CategoriesSeeder extends Seeder
 {
@@ -14,38 +14,32 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('categories')->truncate();
+        Category::truncate();
 
         $data = [
             [
-                'name' => 'T-Shirts',
-                'image' => 'category-1.jpg',
-                'is_public' => rand(0, 1),
-                'user_id' => rand(1, 20),
+                'name' => 'Women',
+                'image' => 'women.jpg',
+                'quantity' => rand(1,999),
+                'is_public' => 1,
             ],
 
             [
-                'name' => 'Jacket',
-                'image' => 'category-2.jpg',
-                'is_public' => rand(0, 1),
-                'user_id' => rand(1, 20),
+                'name' => 'Children',
+                'image' => 'children.jpg',
+                'quantity' => rand(1,999),
+                'is_public' => 1,
             ],
 
             [
-                'name' => 'Paint',
-                'image' => 'category-3.jpg',
-                'is_public' => rand(0, 1),
-                'user_id' => rand(1, 20),
+                'name' => 'Men',
+                'image' => 'men.jpg',
+                'quantity' => rand(1,999),
+                'is_public' => 1,
             ],
 
-            [
-                'name' => 'Shoes',
-                'image' => 'category-4.jpg',
-                'is_public' => rand(0, 1),
-                'user_id' => rand(1, 20),
-            ],
         ];
 
-        DB::table('categories')->insert($data);
+        Category::insert($data);
     }
 }

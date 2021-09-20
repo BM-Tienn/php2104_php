@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\View;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -62,21 +64,6 @@ Route::get('/person/{age}', function ($age) {
     return 'The baby`s age is: ' . $age;
 })->where('age', '[0-9]');
 
-//route group
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('/', function () {
-        return view('test');
-    });
-    Route::get('/add', function () {
-        return 'Add product';
-    });
-    Route::get('/edit', function () {
-        return 'Edit product';
-    });
-    Route::get('/delete', function () {
-        return 'Delete product';
-    });
-});
 
 //view trong folder phuon
 Route::get('/phuon', function () {
@@ -97,6 +84,25 @@ Route::get('/data', function () {
     return view('phuong')
                 ->with('name', 'Phuong')
                 ->with('age', 23); 
+});
+
+//route group
+Route::name('admin.')->prefix('admin')->group(function () {
+    //show list of products
+    Route::get('/products',[AdminProductController::class, 'index']);
+    
+    //show single product
+    Route::get('/products/{id}', [AdminProductController::class, 'show'])->name('product.show');
+
+    Route::get('/', function () {
+        return view('admin.products.home');
+    });
+    Route::get('/edit', function () {
+        return 'Edit product';
+    });
+    Route::get('/delete', function () {
+        return 'Delete product';
+    });
 });
 
 //

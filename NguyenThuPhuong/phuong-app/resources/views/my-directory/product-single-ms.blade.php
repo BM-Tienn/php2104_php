@@ -22,11 +22,9 @@
                     <div class="rating d-flex">
                         <p class="text-left mr-4">
                             <a href="#" class="mr-2">{{ $product->rate }}</a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
-                            <a href="#"><span class="ion-ios-star-outline"></span></a>
+                            @for ($i=0;$i<$product->rate;$i++)
+                                <span class="ion-ios-star-outline">
+                            @endfor
                         </p>
                         <p class="text-left mr-4">
                             <a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>

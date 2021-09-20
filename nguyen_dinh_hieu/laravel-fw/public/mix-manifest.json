@@ -1,4 +1,19 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/time-zone/adminlte/.babelrc.js": "/time-zone/adminlte/.babelrc.js",
+    "/time-zone/adminlte/.bundlewatch.config.json": "/time-zone/adminlte/.bundlewatch.config.json",
+    "/time-zone/adminlte/.eslintrc.json": "/time-zone/adminlte/.eslintrc.json",
+    "/time-zone/adminlte/.gitpod.yml": "/time-zone/adminlte/.gitpod.yml",
+    "/time-zone/adminlte/.lgtm.yml": "/time-zone/adminlte/.lgtm.yml",
+    "/time-zone/adminlte/CODE_OF_CONDUCT.md": "/time-zone/adminlte/CODE_OF_CONDUCT.md",
+    "/time-zone/adminlte/composer.json": "/time-zone/adminlte/composer.json",
+    "/time-zone/adminlte/iframe.html": "/time-zone/adminlte/iframe.html",
+    "/time-zone/adminlte/index.html": "/time-zone/adminlte/index.html",
+    "/time-zone/adminlte/index2.html": "/time-zone/adminlte/index2.html",
+    "/time-zone/adminlte/index3.html": "/time-zone/adminlte/index3.html",
+    "/time-zone/adminlte/package-lock.json": "/time-zone/adminlte/package-lock.json",
+    "/time-zone/adminlte/package.json": "/time-zone/adminlte/package.json",
+    "/time-zone/adminlte/README.md": "/time-zone/adminlte/README.md",
+    "/time-zone/adminlte/starter.html": "/time-zone/adminlte/starter.html"
 }

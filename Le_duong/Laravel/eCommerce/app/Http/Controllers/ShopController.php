@@ -9,7 +9,7 @@ class ShopController extends Controller
 {
     public function index()
     {
-        $products = Products::all();
+        $products = Products::paginate(12);
         $categories = Categories::all();
         return view('pages.shops',[
             'products' => $products,

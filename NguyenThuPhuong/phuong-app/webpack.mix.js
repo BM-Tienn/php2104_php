@@ -16,7 +16,10 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
+
 mix.copyDirectory('resources/views/vegefoods/css', 'public/vegefoods/css');
 mix.copyDirectory('resources/views/vegefoods/js', 'public/vegefoods/js');
 mix.copyDirectory('resources/views/vegefoods/fonts', 'public/vegefoods/fonts');
 mix.copyDirectory('resources/views/vegefoods/scss', 'public/vegefoods/scss');
+
+mix.copyDirectory('vendor/almasaeed2010/adminlte', 'public/themes/adminlte');

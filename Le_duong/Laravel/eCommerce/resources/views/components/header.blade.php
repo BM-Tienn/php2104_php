@@ -13,7 +13,7 @@
                 <!-- Menu desktop -->
                 <div class="menu-desktop">
                     <ul class="main-menu">
-                        <li class="active-menu">
+                        <li>
                             <a href="{{route('home')}}">Home</a>
                         </li>
 
@@ -90,8 +90,8 @@
             <li>
                 <a href="{{route('home')}}">Home</a>
                 <span class="arrow-main-menu-m">
-						<i class="fa fa-angle-right" aria-hidden="true"></i>
-					</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </span>
             </li>
 
             <li>

@@ -78,7 +78,7 @@
 
 
 <!-- Footer -->
-<x-footer/>
+<x-footer :categories="$categories"/>
 
 
 <!-- Back to top -->
@@ -87,11 +87,6 @@
 			<i class="zmdi zmdi-chevron-up"></i>
 		</span>
 </div>
-
-<!-- Modal1 -->
-@foreach($products as $productModal)
-    <x-modal-product :productModal="$productModal"/>
-@endforeach
 
 
 <!--===============================================================================================-->

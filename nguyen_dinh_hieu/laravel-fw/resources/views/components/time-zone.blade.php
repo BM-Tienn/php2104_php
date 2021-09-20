@@ -68,7 +68,7 @@
                                     </li>
                                     <li><a href="#">Pages</a>
                                         <ul class="submenu">
-                                            <li><a href="login">Login</a></li>
+                                            <li><a href="/login-shop">Login</a></li>
                                             <li><a href="/cart">Cart</a></li>
                                             <li><a href="/elements">Element</a></li>
                                             <li><a href="/confirmation">Confirmation</a></li>

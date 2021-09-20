@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use DB;
+use App\Models\Category;
 
 class ProductSeeder extends Seeder
 {
@@ -15,6 +16,8 @@ class ProductSeeder extends Seeder
     public function run()
     {
         DB::table('products')->truncate();
+
+        $categories = Category::all();
 
         $data = [];
 
@@ -32,7 +35,7 @@ class ProductSeeder extends Seeder
                 'price' => rand(100, 900),
                 'sale_off' => rand(0, 100),
                 'user_id' => 1,
-                'category_id' => 1,
+                'category_id' => $categories->random()->id,
             ];
         }
 

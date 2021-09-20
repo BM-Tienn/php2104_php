@@ -7,6 +7,9 @@ use App\Http\Controllers\PhotoSliderController;
 use App\Http\Controllers\PhotoBannerController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +21,7 @@ use App\Http\Controllers\ShopController;
 |
 */
 
+//Home
 Route::get('/',[HomeController::class,'index'])->name('home');
 
 //Category
@@ -35,6 +39,17 @@ Route::resource('products',ProductsController::class);
 //Shop
 Route::get('/shops',[ShopController::class,'index'])->name('shops');
 
+//Search
+Route::get('/search',[SearchController::class,'show'])->name('search');
+
+//Register
+Route::get('/account/register',[RegisterController::class,'create'])->name('account.register');
+Route::post('/account',[RegisterController::class,'register'])->name('register');
+
+//Login
+Route::get('/account',[LoginController::class,'create'])->name('login');
+Route::post('/account/login',[LoginController::class,'login'])
+  ->name('account.login');
 
 Route::get('/about', function () {
     return view('pages.about');
@@ -62,7 +77,7 @@ Route::get('/shoping_cart', function () {
 
 Route::get('/dashboard', function () {
     return view ('dashboard');
-})->name('dashboard');
+})->name('dashboard')->middleware('authenticate');;
 
 
 

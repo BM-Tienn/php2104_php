@@ -25,9 +25,17 @@ And start server
 php artisan serve
 ```
 
+Run command bellow if error
+```
+composer require "almasaeed2010/adminlte=~3.1"
+npm run dev
+```
+
 Now, you can try it http://localhost:8000/home-page
 
-and http://localhost:8000/products/1
+and more link:
+http://localhost:8000/products/1
+http://localhost:8000/admin/products (requied account admin@gmail.com / 12345678)
 
 https://user-images.githubusercontent.com/49383891/131205031-7723bd94-7a58-4e6e-9d57-3700b892fd6d.mov
 

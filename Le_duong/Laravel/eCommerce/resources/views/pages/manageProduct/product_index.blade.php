@@ -30,7 +30,7 @@
                     @foreach($products as $product)
                         <tr>
                             <td>
-                            {{$product->id}}
+                            {{$loop->index+1}}
                             </td>
                             <td>
                                 {{$product->name}}

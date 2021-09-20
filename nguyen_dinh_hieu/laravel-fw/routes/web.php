@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Admin\ProductController as ProductAdminController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
 
@@ -80,7 +81,7 @@ Route::get('/blog', function() {
 Route::get('/blog-details', function() {
     return view('mypage.blog-details');
 });
-Route::get('/login', function() {
+Route::get('/login-shop', function() {
     return view('mypage.login');
 });
 Route::get('/elements', function() {
@@ -94,4 +95,10 @@ Route::get('/checkout', function() {
 });
 Route::get('/contact', function() {
     return view('mypage.contact');
+});
+
+Route::name('admin.')->prefix("admin")->group(function() {
+
+    Route::resource('products', ProductAdminController::class);
+
 });

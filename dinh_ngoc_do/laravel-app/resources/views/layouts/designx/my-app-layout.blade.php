@@ -87,8 +87,27 @@
                 <li><a href="#">Menu Three</a></li>
               </ul>
             </li>
-            <li><a href="/themes/shopper_fashion/shop.html">Shop</a></li>
-            <li><a href="#">Catalogue</a></li>
+            <li class="has-children">
+              <a href="/themes/shopper_fashion/shop.html">Shop</a>
+              <ul class="dropdown">
+                <li><a href="#">Hoodies & Jackets</a></li>
+                <li><a href="#">Suits</a></li>
+                <li><a href="#">Pant</a></li>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Skirts</a></li>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Bags</a></li>
+                <li><a href="#">Sports</a></li>
+              </ul>
+            </li>
+            <li class="has-children">
+              <a href="#">Catalogue</a>
+              <ul class="dropdown">
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Kids</a></li>
+              </ul>
+            </li>
             <li><a href="#">New Arrivals</a></li>
             <li><a href="/themes/shopper_fashion/contact.html">Contact</a></li>
           </ul>
