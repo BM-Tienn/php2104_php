@@ -42,7 +42,21 @@ class CategoryController extends Controller
         $categories = new Categories();
         $categories->name = $name;
         $categories->title = $title;
-        $categories->save();
+
+        try
+        {
+            $categories->save();
+            $success = 'Post category success';
+            return redirect()->route('categories.create')
+                ->with('success',$success);
+        }
+        catch (\Exception $e)
+        {
+            \Log::error($e);
+            $error = 'Post category fail';
+        }
+        return redirect()->route('categories.create')
+            ->with('error',$error);
         return back();
     }
 
@@ -73,7 +87,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Categories::findOrFail($id);
+        return view('pages.manageCategory.categories_edit')
+            ->with('category',$category);
     }
 
     /**
@@ -85,7 +101,26 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Categories::findOrFail($id);
+        try
+        {
+            $success = 'Update category success';
+            $nameNew = $request->input('name');
+            $titleNew = $request->input('title');
+            $category->name = $nameNew;
+            $category->title = $titleNew;
+            $category->save();
+            return redirect()->route('categories.index')
+                ->with('success',$success);
+
+        }
+        catch (\Exception $e)
+        {
+            \Log::error($e);
+            $fail = 'Update category fail';
+        }
+        return redirect()->route('categories.index')
+            ->with('error',$fail);
     }
 
     /**
@@ -96,6 +131,21 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Categories::findOrFail($id);
+        try
+        {
+            $category->delete();
+
+            $success = 'Delete category success';
+            return redirect()->route('categories.index')
+                ->with('success',$success);
+        }
+        catch (\Exception $e)
+        {
+            \Log::error($e);
+            $error = 'Delete category fail';
+        }
+        return redirect()->route('categories.index')
+            ->with('error',$error);
     }
 }

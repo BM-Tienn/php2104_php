@@ -4,6 +4,22 @@
 @endsection
 
 @section('content')
+@if (session('success'))
+<div class="alert alert-success hidden" role="alert">
+    <div class="d-flex align-items-center justify-content-between">
+        {{session('success')}}
+        <i class="fa fa-close btn-hidden"></i>
+    </div>
+</div>
+@endif
+@if (session('error'))
+<div class="alert alert-danger hidden" role="alert">
+    <div class="d-flex align-items-center justify-content-between">
+        {{session('error')}}
+        <i class="fa fa-close btn-hidden"></i>
+    </div>
+</div>
+@endif
     <div class="card mb-3">
         <div class="card-header">
             <i class="fa fa-table"></i>

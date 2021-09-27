@@ -233,6 +233,12 @@
                 </ul>
               </li>
               <li class="nav-item">
+                <a href="/admin/products" class="nav-link">
+                  <i class="nav-icon fas fa-seedling"></i>
+                  <p> Products</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="pages/widgets.html" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p> Widgets <span class="right badge badge-danger">New</span>
@@ -687,12 +693,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
-                <a href="/admin/products" class="nav-link">
-                  <i class="nav-icon fas fa-seedling"></i>
-                  <p> Products</p>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-search"></i>
@@ -877,5 +878,8 @@
     <script src="/themes/adminlte/dist/js/demo.js"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="/themes/adminlte/dist/js/pages/dashboard.js"></script>
+
+    @yield('script')
+    
   </body>
 </html>

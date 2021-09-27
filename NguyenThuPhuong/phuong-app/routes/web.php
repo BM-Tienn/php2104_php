@@ -21,11 +21,11 @@ use App\Http\Controllers\Admin\ProductController as AdminProductController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('admin.products.home');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
@@ -73,9 +73,11 @@ Route::get('/phuon', function () {
 //kiem tra 1 view co ton tai hay k
 Route::get('/checkview', function() {
     if (View::exists('phuon.check')) {
-        echo '<script>alert("File check exist");</script>';
+        echo '
+<script>alert("File check exist");</script>';
     } else {
-        echo '<script>alert("File check is not exist");</script>';
+        echo '
+<script>alert("File check is not exist");</script>';
     }
 });
 
@@ -87,9 +89,9 @@ Route::get('/data', function () {
 });
 
 //route group
-Route::name('admin.')->prefix('admin')->group(function () {
+Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin'])->group(function () {
     //show list of products
-    Route::get('/products',[AdminProductController::class, 'index']);
+    Route::get('/products',[AdminProductController::class, 'index'])->name('products.index');
     
     //show single product
     Route::get('/products/{id}', [AdminProductController::class, 'show'])->name('product.show');
@@ -97,6 +99,21 @@ Route::name('admin.')->prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('admin.products.home');
     });
+
+    //create product
+    Route::get('/create',[AdminProductController::class, 'create'])->name('product.create');
+    Route::post('/create',[AdminProductController::class, 'store'])->name('product.store');
+
+    //edit product
+    Route::get('/edit/{id}', [AdminProductController::class, 'edit'])->name('product.edit');
+    Route::patch('/update/{id}', [AdminProductController::class, 'update'])->name('product.update');
+
+    //delete product
+    Route::delete('/destroy/{id}', [AdminProductController::class, 'destroy'])->name('product.destroy');
+
+    //search products
+    Route::get('/search',[AdminProductController::class, 'search'])->name('products.search');
+
     Route::get('/edit', function () {
         return 'Edit product';
     });

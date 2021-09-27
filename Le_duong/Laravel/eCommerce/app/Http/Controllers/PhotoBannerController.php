@@ -39,12 +39,25 @@ class PhotoBannerController extends Controller
         $name = $request->file('banner')->getClientOriginalName();
         $size = $request->file('banner')->getSize();
         $type = $request->file('banner')->getMimeType();
-        $request->file('banner')->storeAs('public/images/banner',$name);
         $banners = new PhotoBanners();
         $banners->name = $name;
         $banners->size = $size;
         $banners->type = $type;
-        $banners->save();
+        try
+        {
+            $banners->save();
+            $request->file('banner')->storeAs('public/images/banner',$name);
+            $success = 'Post banner success';
+            return redirect()->route('banner.index')
+                ->with('success',$success);
+        }
+        catch (\Exception $e)
+        {
+            \Log::error($e);
+            $error = 'Post banner fail';
+        }
+        return redirect()->route('banner.index')
+            ->with('error',$error);
         return back();
     }
 
@@ -56,7 +69,9 @@ class PhotoBannerController extends Controller
      */
     public function show($id)
     {
-        //
+        $banner = PhotoBanners::findOrFail($id);
+        return view('pages.manageBanner.banner_edit')
+            ->with('banner',$banner);
     }
 
     /**
@@ -79,7 +94,29 @@ class PhotoBannerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $banner = PhotoBanners::findOrFail($id);
+        try
+        {
+            $success = 'Update banner success';
+            $nameNew = $request->file('banner')->getClientOriginalName();
+            $sizeNew = $request->file('banner')->getSize();
+            $typeNew = $request->file('banner')->getMimeType();
+            $request->file('banner')->storeAs('public/images/banner',$nameNew);
+            $banner->name = $nameNew;
+            $banner->size = $sizeNew;
+            $banner->type = $typeNew;
+            $banner->save();
+            return redirect()->route('banner.index')
+                ->with('success',$success);
+
+        }
+        catch (\Exception $e)
+        {
+            \Log::error($e);
+            $fail = 'Update banner fail';
+        }
+        return redirect()->route('banner.index')
+            ->with('error',$fail);
     }
 
     /**
@@ -90,6 +127,21 @@ class PhotoBannerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $banner = PhotoBanners::findOrFail($id);
+        try
+        {
+            $banner->delete();
+            Storage::delete('public/images/banner/'.$banner->name);
+            $success = 'Delete banner success';
+            return redirect()->route('banner.index')
+                ->with('success',$success);
+        }
+        catch (\Exception $e)
+        {
+            \Log::error($e);
+            $error = 'Delete banner fail';
+        }
+        return redirect()->route('banner.index')
+            ->with('error',$error);
     }
 }

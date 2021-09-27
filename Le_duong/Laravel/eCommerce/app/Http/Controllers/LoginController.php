@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -15,17 +14,15 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-//      $validateData = $request->validate([
-//        'email' => ['required','max:100','email'],
-//        'password' => ['required','between:8,32'],
-//      ]);
+      $valiDate = $request->validate([
+        'email' => ['required', 'email', 'max:100'],
+        'password' => ['required', 'between:8,32']
+      ]);
 
-      $data = $request->only('email', 'password');
-      if(Auth::attempt($data)) {
-        return redirect()->route('dashboard');
-      } else {
-        return redirect()->route('login');
+      if (Auth::attempt($valiDate)) {
+        $request->session()->regenerate();
+        return redirect()->intended('dashboard');
       }
+      return back();
     }
-
 }

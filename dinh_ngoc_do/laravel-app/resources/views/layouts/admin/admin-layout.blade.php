@@ -279,7 +279,7 @@
             </ul>
           </li>
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="" class="nav-link active">
               <i class="nav-icon fas fa-tshirt"></i>
               <p>
                 Product
@@ -295,7 +295,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/forms/advanced.html" class="nav-link active">
+                <a href="{{ route('admin.products.index') }}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List Product</p>
                 </a>
@@ -408,5 +408,7 @@
 <script src="/themes/admin/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/themes/admin/dist/js/pages/dashboard.js"></script>
+
+@yield('script-close-alert')
 </body>
 </html>

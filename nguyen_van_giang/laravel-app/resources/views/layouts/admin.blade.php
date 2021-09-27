@@ -222,15 +222,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('admin.products.index') }}" class="nav-link active">
+                <a href="{{ route('admin.products.index') }}"
+                  class="nav-link @if (url()->current() == route('admin.products.index')) active @endif"
+                >
                   <i class="far fa-circle nav-icon"></i>
                   <p>List</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
+                <a href="{{ route('admin.products.create') }}"
+                  class="nav-link @if (url()->current() == route('admin.products.create')) active @endif"
+                >
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
+                  <p>Create</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -620,5 +624,8 @@
 <script src="/themes/adminlte/dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/themes/adminlte/dist/js/pages/dashboard.js"></script>
+
+@yield('script')
+
 </body>
 </html>

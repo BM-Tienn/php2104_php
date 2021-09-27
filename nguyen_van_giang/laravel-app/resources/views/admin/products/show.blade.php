@@ -1,4 +1,15 @@
 <x-admin-layout>
+  @if (session('msg'))
+    <div class="alert alert-success">
+      {{ session('msg') }}
+    </div>
+  @endif
+
+  @if (session('error'))
+    <div class="alert alert-danger">
+      {{ session('error') }}
+    </div>
+  @endif
   <!-- Default box -->
   <div class="card card-solid">
     <div class="card-body">

@@ -4,6 +4,17 @@
 @endsection
 
 @section('content')
+  @if (session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+    </div>
+  @endif
+
+  @if (session('fail'))
+    <div class="alert alert-danger">
+      {{ session('fail') }}
+    </div>
+  @endif
     <div class="card mb-3">
         <div class="card-header">
             <i class="fa fa-table"></i>
@@ -30,7 +41,7 @@
                     @foreach($products as $product)
                         <tr>
                             <td>
-                            {{$loop->index+1}}
+                              {{ $loop->iteration + ($products->currentPage()-1) * ($products->perPage()) }}
                             </td>
                             <td>
                                 {{$product->name}}
@@ -65,18 +76,21 @@
                                 </div>
                             </td>
                             <td>
-                                <a href="">
+                                <a href="{{route('products.edit',['product' => $product->id])}}">
                                     <button class="btn btn-success">
                                         <i class="fa fa-edit"></i>
                                         Update
                                     </button>
                                 </a>
-                                <a href="">
-                                    <button class="btn btn-danger">
-                                        <i class="fa fa-remove"></i>
-                                        Delete
-                                    </button>
-                                </a>
+                              <button
+                                class="btn btn-danger btn-delete"
+                                data-toggle="modal"
+                                data-target="#modalDelete"
+                                data-url="{{route('products.destroy',['product' => $product->id])}}"
+                              >
+                                <i class="fa fa-remove"></i>
+                                Delete
+                              </button>
                             </td>
                         </tr>
                     @endforeach

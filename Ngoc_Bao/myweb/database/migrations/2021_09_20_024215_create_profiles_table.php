@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateProfilesTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        // users 1 - 1 profile : phone, address, age, sex...
+        Schema::create('profiles', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('user_id');
+            $table->string('phone')->nullable();
+            $table->text('address')->nullable();
+            $table->integer('age')->nullable();
+            $table->boolean('sex')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('profiles');
+    }
+}

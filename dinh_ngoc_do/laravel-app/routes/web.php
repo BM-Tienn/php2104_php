@@ -60,7 +60,7 @@ Route::get('/username/{name?}', function (Request $request, $name = 'Guest') {
 }); */
 
 //Prefix
-Route::name('admin.')->prefix('admin')->group(function () {
+Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 
     Route::resource('products', AdminProductController::class);
 });

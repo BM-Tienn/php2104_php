@@ -1,9 +1,26 @@
 <x-admin>
   <div class="content" style="min-height: 1602px;">
     <!-- Content Header (Page header) -->
-    <div class="card ">
+    <div class="card">
       <div class="card-header text-center">
         <h1 class="">Single Product</h1>
+      </div>
+      <div class="text-center">
+      @if(Session::has('success'))
+          <div class="alert alert-success fade in alert-dismissible show" style="height: 50px;">
+          {{Session::get('success')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true" style="font-size:20px">×</span>  
+          </div>
+        @endif
+
+        @if(Session::has('error'))
+          <div class="alert alert-danger fade in alert-dismissible show" style="height: 50px;">
+          {{Session::get('error')}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true" style="font-size:20px">×</span>  
+          </div>
+        @endif   
       </div>
       <!-- Main content -->
       <section class="content">
@@ -50,11 +67,8 @@
                 </div>
                 <hr>
                 <h5>{{ $products->description }}</h5>
-                <!-- <div class="mt-4"><div class="btn btn-primary btn-lg btn-flat"><i class="fas fa-cart-plus fa-lg mr-2"></i>
-                  Add to Cart
-                </div><div class="btn btn-default btn-lg btn-flat"><i class="fas fa-heart fa-lg mr-2"></i>
-                  Add to Wishlist
-                </div></div> -->
+                <div class="mt-4">
+                <a href="/admin/products" type="button" class="btn btn-primary">Go to list products</a>
               </div>
             </div>
             <div class="row mt-4">

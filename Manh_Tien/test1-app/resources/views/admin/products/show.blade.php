@@ -1,4 +1,15 @@
 <x-admin-layout>
+  @if (session('msg'))
+    <div class="alert alert-success">
+      {{ session('msg') }}
+    </div>
+  @endif
+
+  @if (session('error'))
+    <div class="alert alert-danger">
+      {{ session('error') }}
+    </div>
+  @endif
   <!-- Default box -->
   <div class="card card-solid">
     <div class="card-body">
@@ -6,14 +17,7 @@
         <div class="col-12 col-sm-6">
           <h3 class="d-inline-block d-sm-none">{{ $product->name }}</h3>
           <div class="col-12">
-            <img src="/{{ $product->image }}" class="product-image" alt="Product Image">
-          </div>
-          <div class="col-12 product-image-thumbs">
-            <div class="product-image-thumb active"><img src="/{{ $product->image }}" alt="Product Image"></div>
-            <div class="product-image-thumb" ><img src="/{{ $product->image }}" alt="Product Image"></div>
-            <div class="product-image-thumb" ><img src="/{{ $product->image }}" alt="Product Image"></div>
-            <div class="product-image-thumb" ><img src="/{{ $product->image }}" alt="Product Image"></div>
-            <div class="product-image-thumb" ><img src="/{{ $product->image }}" alt="Product Image"></div>
+            <img src="{{ asset('storage/products/' . $product->image) }}" class="product-image" alt="{{ $product->name }}">
           </div>
         </div>
         <div class="col-12 col-sm-6">

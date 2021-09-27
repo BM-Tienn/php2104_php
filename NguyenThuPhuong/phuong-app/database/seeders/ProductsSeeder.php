@@ -29,7 +29,7 @@ class ProductsSeeder extends Seeder
                 'rate' => rand(1, 5),
                 'sold' => rand(1, 100),
                 'price' => rand(100, 900),
-                'user_id' => 1,
+                'user_id' => rand(1, 3),
                 'is_public' => 1,
                 'category_id' => rand(1, 4),
                 'sale_off' => rand(0, 5)

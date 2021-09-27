@@ -10,6 +10,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,8 +49,10 @@ Route::post('/account',[RegisterController::class,'register'])->name('register')
 
 //Login
 Route::get('/account',[LoginController::class,'create'])->name('login');
-Route::post('/account/login',[LoginController::class,'login'])
-  ->name('account.login');
+Route::post('/account/login',[LoginController::class,'login'])->name('account.login');
+
+//Logout
+Route::post('/account/logout',[LogoutController::class,'logout'])->name('logout');
 
 Route::get('/about', function () {
     return view('pages.about');
@@ -77,7 +80,7 @@ Route::get('/shoping_cart', function () {
 
 Route::get('/dashboard', function () {
     return view ('dashboard');
-})->name('dashboard')->middleware('authenticate');;
+})->name('dashboard')->middleware('admin');
 
 
 
