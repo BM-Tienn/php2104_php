@@ -5,7 +5,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SingleController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\Admin\AdminProductController ;
+use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\Admin\AdminCategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -211,9 +213,12 @@ Route::get('/theme-categories-page', [CategoryController::class, 'index'])->name
 //admin
 Route::name('admin')->prefix('admin')->group(function () {
     Route::resource('products',AdminProductController::class);
+    Route::resource('/category',AdminCategoryController::class);
+
     Route::get('/search',[AdminProductController::class, 'search'])->name('search');
     Route::get('/searchs',[AdminProductController::class, 'searchs'])->name('searchs');
 });
+
 
 /* 
 Route::get('/admin/products', function() {

@@ -213,7 +213,8 @@
           <li class="nav-header">EXAMPLES</li>
 
           <li class="nav-item menu-is-opening menu-open">
-            <a href="{{ route('adminproducts.index') }}" class="nav-link active">
+            <a href="" class="nav-link @if (url()->current() == route('adminproducts.index')) active @endif 
+              @if (url()->current() == route('adminproducts.create')) active @endif @if (url()->current() == route('adminsearch')) active @endif">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 Products
@@ -222,7 +223,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('adminproducts.index') }}" class="nav-link @if (url()->current() == route('adminproducts.index')) active @endif">
+                <a href="{{ route('adminproducts.index') }}" class="nav-link @if (url()->current() == route('adminproducts.index'))active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Home</p>
                 </a>
@@ -233,29 +234,46 @@
                   <p>Create</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('adminsearch') }}" class="nav-link @if (url()->current() == route('adminsearch')) active @endif">
+                  <i class="nav-icon fas fa-search"></i>
+                  <p>
+                    Search
+                  </p>
+                </a>
+              </li> 
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-search"></i>
+          <li class="nav-item menu-is-opening menu-open">
+            <a href="" class="nav-link @if (url()->current() == route('admincategory.index')) active @endif
+            @if (url()->current() == route('admincategory.create')) active @endif">
+              <i class="nav-icon fas fa-book"></i>
               <p>
-                Search
+                Category
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/search/simple.html" class="nav-link">
+                <a href="{{ route('admincategory.index') }}" class="nav-link @if (url()->current() == route('admincategory.index')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Search</p>
+                  <p>Home</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/search/enhanced.html" class="nav-link">
+                <a href="{{ route('admincategory.create') }}" class="nav-link @if (url()->current() == route('admincategory.create')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Enhanced</p>
+                  <p>Create</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('adminsearch') }}" class="nav-link">
+                  <i class="nav-icon fas fa-search"></i>
+                  <p>
+                    Search
+                  </p>
+                </a>
+              </li> 
             </ul>
           </li>
           

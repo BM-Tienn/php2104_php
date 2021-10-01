@@ -14,7 +14,7 @@
           <select class="custom-select" name="category_id">
             @foreach ($categories as $id => $category)
               <option value="{{ $id }}"
-                @if ($id == @$product->id)
+                @if ($id == @$product->category_id)
                 selected
                 @endif
               >

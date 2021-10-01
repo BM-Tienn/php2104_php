@@ -1,7 +1,6 @@
 <div class="container-fluid">
     <h2 class="text-center display-4">Enhanced Search</h2>
     <form action="{{ $action }}" method="GET">
-    
 
     @if ($method == 'PUT')
       @method('PUT')
