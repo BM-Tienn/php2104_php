@@ -218,14 +218,3 @@ Route::name('admin')->prefix('admin')->group(function () {
     Route::get('/search',[AdminProductController::class, 'search'])->name('search');
     Route::get('/searchs',[AdminProductController::class, 'searchs'])->name('searchs');
 });
-
-
-/* 
-Route::get('/admin/products', function() {
-    return view('admin/products/product-index');
-})->name('products');
-
-Route::get('/admin/products',[ProductController::class, 'show'])->name('admin-product');
-
-Route::get('/admin/category',[CategoryController::class, 'adminshow'])->name('admin-category');
-*/
