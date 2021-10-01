@@ -6,15 +6,17 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\User;
 
 class AdminProductController extends Controller
 {
     protected $modelProduct;
+    protected $categoryModel;
 
-    public function __construct(Product $product)
+    public function __construct(Product $product, Category $category)
     {
         $this->modelProduct = $product;
-        /* $this->categoryModel = $category; */
+        $this->categoryModel = $category;
     }
 
     public function index()
@@ -34,7 +36,13 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.admin-add-product');
+        $categories = $this->categoryModel
+            ->pluck('name', 'id')
+            ->toArray();
+
+        return view('admin.product.admin-add-product', [
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -45,7 +53,39 @@ class AdminProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only([
+            'category_id',
+            'name',
+            'title',
+            'image',
+            'price',
+            'description',
+            'quantity',
+            'is_public',
+        ]);
+
+        $data['category_id'] = (int) $data['category_id'];
+        $data['is_public'] = isset($data['is_public']) ? (int) $data['is_public'] : 0;
+        $data['user_id'] = auth()->id();
+
+       /*  dd($data); */
+
+        try {
+            $product = $this->modelProduct->create($data);
+            $msg = 'Create Product Successfully';
+
+            return redirect()
+                ->route('admin.products.index')
+                ->with('msg', $msg);
+        } catch (\Exception $e) {
+            \Log::error($e);
+
+            $error = 'Something went wrong. Please try againt!';
+
+            return redirect()
+                ->route('admin.products.index')
+                ->with('error', $error);
+        }
     }
 
     /**
@@ -67,7 +107,15 @@ class AdminProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = $this->modelProduct->findOrFail($id);
+        $categories = $this->categoryModel
+            ->pluck('name', 'id')
+            ->toArray();
+
+        return view('admin.product.admin-edit-product', [
+            'product' => $product,
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -79,7 +127,39 @@ class AdminProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->only([
+            'category_id',
+            'name',
+            'title',
+            'image',
+            'price',
+            'description',
+            'quantity',
+            'is_public',
+        ]);
+
+        $data['category_id'] = (int) $data['category_id'];
+        $data['is_public'] = isset($data['is_public']) ? (int) $data['is_public'] : 0;
+        $data['user_id'] = auth()->id();
+
+        /* dd($data); */
+
+        try {
+            $product = $this->modelProduct->findOrFail($id)->update($data);
+            $msg = 'Update Product Successfully';
+
+            return redirect()
+                ->route('admin.products.index')
+                ->with('msg', $msg);
+        } catch (\Exception $e) {
+            \Log::error($e);
+
+            $error = 'Something went wrong. Please try againt!';
+
+            return redirect()
+                ->route('admin.products.index')
+                ->with('error', $error);
+        }
     }
 
     /**

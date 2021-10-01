@@ -6,7 +6,7 @@
   </div>
   <!-- /.card-header -->
   <!-- form start -->
-  <form method="POST" action="{{ route('admin.product.update', ['id' => $products->id]) }}">
+  <form method="POST" action="{{ route('admin.product.update', ['id' => $products->id]) }}" enctype="multipart/form-data">
     @method('PATCH')
     @csrf
     <div class="card-body">
@@ -14,7 +14,7 @@
         <input type="hidden" class="form-control" id="exampleInputCategory" value="{{ $products->id }}" name="id">
       </div>
       <div class="form-group">
-      <select name="category_id" id="exampleInputCategoryId" class="form-control">
+        <select name="category_id" id="exampleInputCategoryId" class="form-control">
         <option  value="{{ $products->category->id }}">{{ $products->category->name }} - Choose...</option>
           @foreach($categories as $category)
           <option  value="{{ $category->id }}" >{{ $category->name }}</option>
@@ -27,27 +27,50 @@
       </div> -->
       <div class="form-group">
         <label for="exampleInputName">Name</label>
-        <input type="text" class="form-control" id="exampleInputname" value="{{ $products->name }}" name="name">
+        <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputName" value="{{ $products->name }}" name="name">
+        @error('name')
+          @if ($errors->has('name'))
+          <p style="color:red; font-size:12px; ">{{ $errors->first('name') }}</p>
+          @endif
+        @enderror
       </div>
       <div class="form-group">
         <label for="exampleInputPrice">Price - $</label>
-        <input type="number" class="form-control" id="exampleInputPrice" value="{{ $products->price }}" name="price">
+        <input type="text" class="form-control  @error('price') is-invalid @enderror" id="exampleInputPrice" value="{{ $products->price }}" name="price">
+        @error('price')
+          @if ($errors->has('price'))
+          <p style="color:red; font-size:12px; ">{{ $errors->first('price') }}</p>
+          @endif
+        @enderror
       </div>
-      <!-- <div class="form-group">
-        <label for="exampleInputImage">Image</label>
-        <div class="input-group">
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" id="exampleInputFile" value="{{ $products->image }}" name="image">
-            <label class="custom-file-label" for="exampleInputFile">Choose file image</label>
+      <div class="form-group">
+          <label for="exampleInputImage">Image</label>
+          <div class="input-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input  @error('image') is-invalid @enderror" id="exampleInputImage" value="{{ $products->image }}" name="image" >
+              <label class="custom-file-label" for="exampleInputImage">
+                @if (isset($products))
+                  {{ $products->image }}
+                @else
+                  Choose file
+                @endif  
+              </label>
+            </div>
           </div>
-          <div class="input-group-append">
-            <span class="input-group-text">Upload</span>
-          </div>
-        </div>
-      </div> -->
+          @error('image')
+            @if ($errors->has('image'))
+              <p style="color:red; font-size:12px; ">{{ $errors->first('image') }}</p>
+            @endif
+          @enderror
+      </div>     
       <div class="form-group">
         <label for="exampleInputQuantity">Quantity - kg</label>
-        <input type="number" class="form-control" id="exampleInputQuantity" value="{{ $products->quantity }}" name="quantity">
+        <input type="text" class="form-control @error('quantity') is-invalid @enderror" id="exampleInputQuantity" value="{{ $products->quantity }}" name="quantity">
+        @error('quantity')
+          @if ($errors->has('quantity'))
+          <p style="color:red; font-size:12px; ">{{ $errors->first('quantity') }}</p>
+          @endif
+        @enderror
       </div>
       <!-- <div class="form-group">
         <label for="exampleInputRate">Rate</label>
@@ -75,4 +98,11 @@
         <button type="submit" class="btn btn-primary" style=" width: 100px; " >Edit</button>
       </div>
   </form>
+@section('script')
+  <script type="text/javascript">
+    $("#exampleInputImage").change(function(){
+      $(".custom-file-label").text(this.files[0].name);
+    });
+  </script>
+@endsection
 </x-admin>

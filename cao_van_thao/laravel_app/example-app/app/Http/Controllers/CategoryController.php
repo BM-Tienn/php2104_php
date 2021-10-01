@@ -16,7 +16,7 @@ class CategoryController extends Controller
         $this->productsModel = $product;
     }
 
-    public function index($id)
+    public function categories($id)
     {
         $category = $this->categoryModel->FindOrFail($id);
 

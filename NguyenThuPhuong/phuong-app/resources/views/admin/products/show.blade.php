@@ -30,7 +30,7 @@
             <div class="row">
               <div class="col-12 col-sm-6">
                 <div class="col-12">
-                  <img src="{{ $products->image }}" class="product-image" alt="Product Image">
+                  <img src="{{ asset('storage/products/' . $products->image) }}" class="product-image" alt="{{ $products->name}}">
                 </div>
                 <!-- <div class="col-12 product-image-thumbs"><div class="product-image-thumb active"><img src="/themes/adminlte/dist/img/prod-1.jpg" alt="Product Image"></div><div class="product-image-thumb"><img src="/themes/adminlte/dist/img/prod-2.jpg" alt="Product Image"></div><div class="product-image-thumb"><img src="/themes/adminlte/dist/img/prod-3.jpg" alt="Product Image"></div><div class="product-image-thumb"><img src="/themes/adminlte/dist/img/prod-4.jpg" alt="Product Image"></div><div class="product-image-thumb"><img src="/themes/adminlte/dist/img/prod-5.jpg" alt="Product Image"></div></div> -->
               </div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductDetailController;
+use App\Http\Controllers\Admin\ProductController as AdminProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,21 +42,23 @@ Route::get('/user/{id?}', function ($id = null) {
 Route::view('welcome', 'welcome');
 
 //route group
-// Route::middleware(['auth'])->group(function () {
-//     // route method
-//     Route::view('/route-view', 'route-view');
+Route::name('admin')->prefix('admin')->middleware(['auth', 'admin'])->group(function () {
+    // // route method
+    // Route::view('/route-view', 'route-view');
 
-//     //route post
-//     Route::post('/show-post', function (Request $request) {
-//         return view('show-post', ['show' => $request->all()]);
-//         //dd('show');
-//     });
+    // //route post
+    // Route::post('/show-post', function (Request $request) {
+    //     return view('show-post', ['show' => $request->all()]);
+    //     //dd('show');
+    // });
 
-//     //route get
-//     Route::get('/show-get', function (Request $request) {
-//         return view('show-get', ['show' => $request->all()]);
-//     });
-// });
+    // //route get
+    // Route::get('/show-get', function (Request $request) {
+    //     return view('show-get', ['show' => $request->all()]);
+    // });
+
+    Route::resource('products', AdminProductController::class);
+});
 
 Route::get('/php', function() {
     return response()->json([
@@ -78,8 +81,10 @@ Route::get('/products', [ProductController::class, 'Product'])->name('products.p
 
 Route::get('/productsdetail/{id}', [ProductDetailController::class, 'ProductDetail'])->name('products.product-detail');
 
-Route::get('/categories/{id}', [CategoryController::class, 'category'])->name('category.show');
+Route::get('/categories/{id}', [CategoryController::class, 'categories'])->name('category.show');
 
 Route::get('/child-page', function() {
     return view('my-directory.child-page');
 })->name('child-page');
+
+

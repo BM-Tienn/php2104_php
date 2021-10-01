@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Http\Controllers\Auth;
+use App\Http\Requests\StoreProductsRequest;
 
 class ProductController extends Controller
 {
@@ -44,8 +45,7 @@ class ProductController extends Controller
 
         return view('admin.products.create',[
             'categories' => $categories,
-        ]);
-        
+        ]);    
     }
 
     /**
@@ -54,7 +54,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductsRequest $request)
     {
         // $products = new Product;
         
@@ -76,6 +76,7 @@ class ProductController extends Controller
             'category_id',
             'user_id',
             'name',
+            'image',
             'description',
             'price',
             'quantity',
@@ -84,28 +85,31 @@ class ProductController extends Controller
         ]);
 
         $data['category_id'] = (int) $data['category_id'];
-        
         $data['is_public'] = isset($data['is_public']) ? (int) $data['is_public'] : 0;
         $data['user_id'] = auth()->id();
-        //dd($data);
+        
         try {
+
+            $fileImg = $request->file('image');
+           
+            if ($fileImg) {
+                $fileImg->store('public/products');
+                $data['image'] = $fileImg->hashName();
+            }
+
             $product = $this->productModel->create($data);
             //dd($product);
             return redirect()
                 ->route('admin.product.show', ['id' => $product->id])
                 ->withSuccess('Add product success!');
-
-
         } catch (\Exception $e) {
-            
+         
             \Log::error($e);
 
             return redirect()
                 ->route('admin.products.index')
                 ->withError('Add product failed. Please try again later!');
-
         } 
-
     }
 
     /**
@@ -121,7 +125,6 @@ class ProductController extends Controller
         return view('admin.products.show', [
             'products' => $products,
         ]);
-
     }
 
     /**
@@ -138,8 +141,7 @@ class ProductController extends Controller
         return view('admin.products.edit',[
             'products' => $products,
             'categories' => $categories,
-        ]);
-        
+        ]);     
     }
 
     /**
@@ -149,7 +151,7 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProductsRequest $request, $id)
     {
         $product = $this->productModel->findOrFail($id);
         
@@ -173,15 +175,25 @@ class ProductController extends Controller
             'category_id',
             'user_id',
             'name',
+            'image',
             'description',
             'price',
             'quantity',
             'sale_off',
             'is_public',
         ]);
-        try{
+
+        try {
+
+            $fileImg = $request->file('image');
+
+            if ($fileImg) {
+                $fileImg->store('public/products');
+                $data['image'] = $fileImg->hashName();
+            }
             //$products->save();
-            $product->update($data);
+            $product->update($data); 
+            
             return redirect()
                 ->route('admin.product.show', ['id' => $product->id])
                 ->withSuccess('Edit product success!');
@@ -206,9 +218,9 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = $this->productModel->findOrFail($id);
-        
 
-        try{
+        try {
+
             $product->delete();
 
             return redirect()
@@ -222,13 +234,20 @@ class ProductController extends Controller
             return redirect()
                 ->route('admin.products.index')
                 ->withError('Delete failed. Please try again later!');
-
         } 
         
     }
 
     public function search(Request $request)
     {
+        $keySearch = $request->get('keyS');
        
+        $products =  $this->productModel
+            ->where('name', 'like', '%' . $keySearch . '%')
+            ->paginate(config('product.paginate'));
+        
+        return view('admin.products.index',[
+            'products' => $products,
+        ]);
     }
 }

@@ -12,19 +12,26 @@
             </svg> &ensp; Add Product </a>
         </div>
       </div>
-      <div class="col-md-4" style="padding-top: 20px;"> @if(Session::has('success')) <div class="alert alert-success fade in alert-dismissible show" style="height: 50px;">
-          {{Session::get('success')}}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true" style="font-size:20px">×</span>
-        </div> @endif @if(Session::has('error')) <div class="alert alert-danger fade in alert-dismissible show" style="height: 50px;">
-          {{Session::get('error')}}
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true" style="font-size:20px">×</span>
-        </div> @endif </div>
+      <div class="col-md-4" style="padding-top: 20px;"> 
+      @if(Session::has('success')) 
+      <div class="alert alert-success fade in alert-dismissible show" style="height: 50px;">
+        {{Session::get('success')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true" style="font-size:20px">×</span>
+      </div> 
+      @endif 
+      @if(Session::has('error')) 
+      <div class="alert alert-danger fade in alert-dismissible show" style="height: 50px;">
+      {{Session::get('error')}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true" style="font-size:20px">×</span>
+      </div>
+        @endif 
+      </div>
       <div class="col-md-4" style="padding-top: 20px;">
         <form action="/admin/search" class="form-inline">
           <div class="from-group">
-            <input type="text" style="width: 450px; height: 40px;" name="keyS">
+            <input type="text" style="width: 450px; height: 40px;" name="keyS" value="">
           </div>
           <button type="submit" class="btn btn-xs btn-secondary" style="width: 55px; height: 40px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -59,7 +66,7 @@
               <td>{{ $product->user_id }}</td>
               <td>{{ $product->price }}</td>
               <td>
-                <img src="{{ $product->image }}" style="width: 60px; height: 60px;" />
+                <img src="{{ asset('storage/products/' . $product->image) }}" style="width: 60px; height: 60px;" />
               </td>
               <td>{{ $product->quantity }}</td>
               <td>{{ $product->sold }}</td>

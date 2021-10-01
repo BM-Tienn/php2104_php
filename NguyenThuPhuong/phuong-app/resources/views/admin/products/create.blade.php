@@ -6,24 +6,64 @@
   </div>
   <!-- /.card-header -->
   <!-- form start -->
-  <form method="POST" action="{{ route('admin.product.store') }}"> @csrf <div class="card-body">
+  <form method="POST" action="{{ route('admin.product.store') }}" enctype="multipart/form-data"> 
+    @csrf 
+    <div class="card-body">
       <div class="form-group">
         <label for="exampleInputCategoty">Category</label>
-        <select name="category_id" id="exampleInputCategoryId" class="form-control"> @foreach($categories as $category) <option value="{{ $category->id }}">{{ $category->name }}</option> @endforeach </select>
+        <select name="category_id" id="exampleInputCategoryId" class="form-control"> 
+          @foreach($categories as $category)
+           <option value="{{ $category->id }}">{{ $category->name }}</option>
+          @endforeach 
+        </select>
       </div>
       <!-- <div class="form-group"><label for="exampleInputUserId">User ID</label><input type="number" class="form-control" id="exampleInputUserId" placeholder="Enter user id" name="user_id"></div> -->
       <div class="form-group">
         <label for="exampleInputName">Name</label>
-        <input type="text" class="form-control" id="exampleInputname" placeholder="Enter name product" name="name">
+        <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputName" placeholder="Enter name product" name="name" value="{{ old('name') }}">
+        @error('name')
+          @if ($errors->has('name'))
+            <p style="color:red; font-size:12px; ">{{ $errors->first('name') }}</p>
+          @endif
+        @enderror
       </div>
       <div class="form-group">
         <label for="exampleInputPrice">Price - $</label>
-        <input type="text" class="form-control" id="exampleInputPrice" placeholder="Enter price" name="price">
+        <input type="text" class="form-control  @error('price') is-invalid @enderror" id="exampleInputPrice" placeholder="Enter price" name="price" value="{{ old('price') }}">
+        @error('price')
+          @if ($errors->has('price'))
+            <p style="color:red; font-size:12px; ">{{ $errors->first('price') }}</p>
+          @endif
+        @enderror
       </div>
-      <!-- <div class="form-group"><label for="exampleInputImage">Image</label><div class="input-group"><div class="custom-file"><input type="file" class="custom-file-input" id="exampleInputFile" name="image"><label class="custom-file-label" for="exampleInputFile">Choose file image</label></div></div></div> -->
+      <div class="form-group">
+          <label for="exampleInputImage">Image</label>
+          <div class="input-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input  @error('image') is-invalid @enderror" id="exampleInputImage" name="image">
+              <label class="custom-file-label" for="exampleInputImage">
+                @if (isset($products))
+                  {{ $products->image }}
+                @else
+                  Choose file
+                @endif  
+              </label>
+            </div>
+          </div>
+          @error('image')
+            @if ($errors->has('image'))
+              <p style="color:red; font-size:12px; ">{{ $errors->first('image') }}</p>
+            @endif
+          @enderror
+      </div>     
       <div class="form-group">
         <label for="exampleInputQuantity">Quantity - kg</label>
-        <input type="number" class="form-control" id="exampleInputQuantity" placeholder="Enter quantity" name="quantity">
+        <input type="text" class="form-control @error('quantity') is-invalid @enderror" id="exampleInputQuantity" placeholder="Enter quantity" name="quantity" value="{{ old('quantity') }}">
+        @error('quantity')
+          @if ($errors->has('quantity'))
+          <p style="color:red; font-size:12px; ">{{ $errors->first('quantity') }}</p>
+          @endif
+        @enderror
       </div>
       <!-- <div class="form-group"><label for="exampleInputRate">Rate</label><input type="number" class="form-control" id="exampleInputRate" placeholder="Enter rate" name="rate"></div><div class="form-group"><label for="exampleInputSold">Sold - kg</label><input type="number" class="form-control" id="exampleInputSold" placeholder="Enter sold" name="sold"></div> -->
       <div class="form-group">
@@ -46,4 +86,12 @@
         <button type="submit" class="btn btn-primary" style=" width: 100px;">Add</button>
       </div>
   </form>
+
+@section('script')
+  <script type="text/javascript">
+    $("#exampleInputImage").change(function(){
+      $(".custom-file-label").text(this.files[0].name);
+    });
+  </script>
+@endsection
 </x-admin>

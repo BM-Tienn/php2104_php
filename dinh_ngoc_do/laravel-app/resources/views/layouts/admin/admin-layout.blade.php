@@ -289,13 +289,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/forms/general.html" class="nav-link">
+                <a href="{{ route('admin.products.create') }}" class="nav-link
+                @if (url()->current() == route('admin.products.create')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>New Product</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('admin.products.index') }}" class="nav-link active">
+                <a href="{{ route('admin.products.index') }}" class="nav-link 
+                @if (url()->current() == route('admin.products.index')) active @endif">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List Product</p>
                 </a>
@@ -409,6 +411,7 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/themes/admin/dist/js/pages/dashboard.js"></script>
 
+@yield('script-delete-alert')
 @yield('script-close-alert')
 </body>
 </html>
