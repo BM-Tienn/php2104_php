@@ -17,7 +17,7 @@
         <div class="col-12 col-sm-6">
           <h3 class="d-inline-block d-sm-none">{{ $product->name }}</h3>
           <div class="col-12">
-            <img src="{{ asset('storage/products/' . $product->image) }}" class="product-image" alt="{{ $product->name }}">
+            <img src="{{ showProductImage($product->image) }}" class="product-image" alt="{{ $product->name }}">
           </div>
         </div>
         <div class="col-12 col-sm-6">

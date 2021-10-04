@@ -47,7 +47,7 @@
               </td>
               <td>
                   <i class="fas fa-eye"></i>
-                  <a href="{{ route('admincategory.edit', ['categories' => $categories->id]) }}" class="btn btn-info btn-xs">
+                  <a href="" class="btn btn-info btn-xs">
                     <i class="fas fa-edit"></i>
                   </a>
                   <button type="button" class="btn btn-danger btn-xs confirm-delete" 

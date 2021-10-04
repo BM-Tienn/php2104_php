@@ -29,7 +29,10 @@
       <div class="col-sm-12">
         <div class="form-group">
           <label>Name</label>
-          <input name="name" type="text" class="form-control" value="{{ @$product->name }}">
+          <input name="name" type="text" class="form-control" value="{{ old('name', @$product->name) }}">
+          @foreach ($errors->get('name') as $message)
+          <p>{{ $message }}</p>
+          @endforeach
         </div>
       </div>
     </div>
@@ -63,6 +66,7 @@
         <div class="form-group">
           <label>Price Sale</label>
           <input name="price_sale" type="text" class="form-control" value="{{ @$product->price_sale }}" placeholder="< price">
+
         </div>
       </div>
     </div>

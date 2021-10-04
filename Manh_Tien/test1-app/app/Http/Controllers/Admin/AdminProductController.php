@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ShopProduct;
 use App\Models\Category;
-
+use App\Http\Requests\StoreProductRequest;
 
 class AdminProductController extends Controller
 {
@@ -54,7 +54,7 @@ class AdminProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductRequest $request)
     {
         $data = $request->only([
             'category_id',
