@@ -36,7 +36,7 @@
 							<h4 class="m-sing">${{ $product->price_sale }} <span>${{ $product->price }}</span></h4>
 						</div>
 						<div class="snipcart-details agileinfo_single_right_details">
-							<form action="#" method="post">
+							<form action="#" method="get">
 								<fieldset>
 									<input type="hidden" name="cmd" value="_cart">
 									<input type="hidden" name="add" value="1">
@@ -242,4 +242,16 @@
 		</div>
 	</div>
 
+	@section('script')
+	<script>
+            // Mini Cart
+            paypal.minicart.render({
+                action: '#'
+            });
+
+            if (~window.location.search.indexOf('reset=true')) {
+                paypal.minicart.reset();
+            }
+        </script>
+	@endsection 
 </x-theme-lay-out>

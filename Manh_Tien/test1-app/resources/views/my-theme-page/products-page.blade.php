@@ -32,8 +32,8 @@
 												<p>{{ $product->name }}</p>
 												<h4>${{ $product->price_sale }} <span>${{ $product->price }}</span></h4>
 											</div>
-											<div class="snipcart-details top_brand_home_details">
-												<form action="#" method="post">
+											<div class="snipcart-details top_brand_home_details add_to_cart">
+												<form action="#" method="get">
 													<fieldset>
 														<input type="hidden" name="cmd" value="_cart">
 														<input type="hidden" name="add" value="1">
@@ -44,7 +44,7 @@
 														<input type="hidden" name="currency_code" value="USD">
 														<input type="hidden" name="return" value=" ">
 														<input type="hidden" name="cancel_return" value=" ">
-														<input type="submit" name="submit" value="Add to cart" class="button">
+														<input type="submit" name="add_to_cart" value="Add to cart" class="button">
 													</fieldset>
 												</form>
 											</div>
@@ -64,4 +64,16 @@
 		</div>
 	</div>
     <!--- products --->
+	@section('script')
+	<script>
+            // Mini Cart
+            paypal.minicart.render({
+                action: '#'
+            });
+
+            if (~window.location.search.indexOf('reset=true')) {
+                paypal.minicart.reset();
+            }
+        </script>
+	@endsection 
 </x-theme-lay-out>

@@ -71,18 +71,6 @@
             </script>
         <!-- //here ends scrolling icon -->
         <script type="text/javascript" src="{{ asset('js/mypage/minicart.min.js') }}" defer></script>
-
-        <script>
-            // Mini Cart
-            paypal.minicart.render({
-                action: '#'
-            });
-
-            if (~window.location.search.indexOf('reset=true')) {
-                paypal.minicart.reset();
-            }
-        </script>
-
         <!-- main slider-banner -->
         <script type="text/javascript" src="{{ asset('js/mypage/skdslider.min.js') }}" defer></script>
         <link href="{{ asset('css/mypage/skdslider.css') }}" rel="stylesheet"> 
@@ -97,6 +85,7 @@
                 });
         </script>	
         <!-- //main slider-banner --> 
+        @yield('script') 
         
     </body>
 </html>
