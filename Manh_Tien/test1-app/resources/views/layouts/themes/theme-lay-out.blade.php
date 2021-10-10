@@ -30,6 +30,8 @@
         <!-- start-smoth-scrolling -->
         <script type="text/javascript" src="{{ asset('js/mypage/move-top.js') }}" defer></script>
         <script type="text/javascript" src="{{ asset('js/mypage/easing.js') }}" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 $(".scroll").click(function(event){		

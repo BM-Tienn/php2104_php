@@ -35,22 +35,13 @@
 						<div class="snipcart-thumb agileinfo_single_right_snipcart">
 							<h4 class="m-sing">${{ $product->price_sale }} <span>${{ $product->price }}</span></h4>
 						</div>
-						<div class="snipcart-details agileinfo_single_right_details">
-							<form action="#" method="get">
-								<fieldset>
-									<input type="hidden" name="cmd" value="_cart">
-									<input type="hidden" name="add" value="1">
-									<input type="hidden" name="business" value=" ">
-									<input type="hidden" name="item_name" value="pulao basmati rice">
-									<input type="hidden" name="amount" value="21.00">
-									<input type="hidden" name="discount_amount" value="1.00">
-									<input type="hidden" name="currency_code" value="USD">
-									<input type="hidden" name="return" value=" ">
-									<input type="hidden" name="cancel_return" value=" ">
-									<input type="submit" name="submit" value="Add to cart" class="button">
-								</fieldset>
-							</form>
+						<div class="input-group">
+							<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
 						</div>
+						<div class="input-group">
+							<a href="#" class="btn add-to-cart">Add to Cart</a></p>
+						</div>
+						
 					</div>
 				</div>
 				<div class="clearfix"> </div>
@@ -84,20 +75,7 @@
 													<h4>$35.99 <span>$55.00</span></h4>
 											</div>
 											<div class="snipcart-details top_brand_home_details">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="business" value=" ">
-														<input type="hidden" name="item_name" value="Fortune Sunflower Oil">
-														<input type="hidden" name="amount" value="35.99">
-														<input type="hidden" name="discount_amount" value="1.00">
-														<input type="hidden" name="currency_code" value="USD">
-														<input type="hidden" name="return" value=" ">
-														<input type="hidden" name="cancel_return" value=" ">
-														<input type="submit" name="submit" value="Add to cart" class="button">
-													</fieldset>
-												</form>
+												<input type="submit" name="submit" value="Add to cart" class="button">
 											</div>
 										</div>
 									</figure>
@@ -127,20 +105,7 @@
 													<h4>$30.99 <span>$45.00</span></h4>
 											</div>
 											<div class="snipcart-details top_brand_home_details">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart">
-															<input type="hidden" name="add" value="1">
-															<input type="hidden" name="business" value=" ">
-															<input type="hidden" name="item_name" value="basmati rise">
-															<input type="hidden" name="amount" value="30.99">
-															<input type="hidden" name="discount_amount" value="1.00">
-															<input type="hidden" name="currency_code" value="USD">
-															<input type="hidden" name="return" value=" ">
-															<input type="hidden" name="cancel_return" value=" ">
-															<input type="submit" name="submit" value="Add to cart" class="button">
-													</fieldset>
-												</form>
+												<input type="submit" name="submit" value="Add to cart" class="button">
 											</div>
 										</div>
 									</figure>
@@ -173,20 +138,7 @@
 													<h4>$80.99 <span>$105.00</span></h4>
 											</div>
 											<div class="snipcart-details top_brand_home_details">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="business" value=" ">
-														<input type="hidden" name="item_name" value="Pepsi soft drink">
-														<input type="hidden" name="amount" value="80.00">
-														<input type="hidden" name="discount_amount" value="1.00">
-														<input type="hidden" name="currency_code" value="USD">
-														<input type="hidden" name="return" value=" ">
-														<input type="hidden" name="cancel_return" value=" ">
-														<input type="submit" name="submit" value="Add to cart" class="button">
-													</fieldset>
-												</form>
+												<input type="submit" name="submit" value="Add to cart" class="button">
 											</div>
 										</div>
 									</figure>
@@ -215,21 +167,8 @@
 												</div>
 													<h4>$35.99 <span>$55.00</span></h4>
 											</div>
-											<div class="snipcart-details top_brand_home_details">
-												<form action="#" method="post">
-													<fieldset>
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="business" value=" ">
-														<input type="hidden" name="item_name" value="Fortune Sunflower Oil">
-														<input type="hidden" name="amount" value="35.99">
-														<input type="hidden" name="discount_amount" value="1.00">
-														<input type="hidden" name="currency_code" value="USD">
-														<input type="hidden" name="return" value=" ">
-														<input type="hidden" name="cancel_return" value=" ">
-														<input type="submit" name="submit" value="Add to cart" class="button">
-													</fieldset>
-												</form>
+											<div class="snipcart-details top_brand_home_details ">
+												<input type="submit" name="submit" value="Add to cart" class="button">
 											</div>
 										</div>
 									</figure>
@@ -243,15 +182,20 @@
 	</div>
 
 	@section('script')
-	<script>
-            // Mini Cart
-            paypal.minicart.render({
-                action: '#'
-            });
-
-            if (~window.location.search.indexOf('reset=true')) {
-                paypal.minicart.reset();
-            }
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.add-to-cart').click(function(e){
+					e.preventDefault(); 
+					var currentQuantity = parseInt( $('#numberItem').text());
+					var addQuantity = parseInt($('#quantity').val());
+					var newQuantity = currentQuantity + addQuantity;
+					$('#numberItem').text(newQuantity);
+					console.log(addQuantity);
+					Swal.fire(
+						'Add to cart successfully !' 
+					)
+				});	
+			});
         </script>
 	@endsection 
 </x-theme-lay-out>
