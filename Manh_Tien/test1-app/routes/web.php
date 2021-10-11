@@ -214,7 +214,11 @@ Route::get('/theme-categories-page', [CategoryController::class, 'index'])->name
 Route::name('admin')->prefix('admin')->group(function () {
     Route::resource('products',AdminProductController::class);
     Route::resource('/category',AdminCategoryController::class);
-
+    
     Route::get('/search',[AdminProductController::class, 'search'])->name('search');
     Route::get('/searchs',[AdminProductController::class, 'searchs'])->name('searchs');
+    
 });
+use App\Http\Controllers\OrderController;
+Route::post('add-to-cart', [OrderController::class, 'saveDataToSession'])->name('order.save');
+Route::get('/theme-cart-page', [ProductController::class, 'cart'])->name('theme-cart-page');

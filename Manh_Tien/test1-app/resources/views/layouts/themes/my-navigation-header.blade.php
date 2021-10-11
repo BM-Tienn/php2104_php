@@ -20,7 +20,7 @@
 						<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
 					</form>-->  
 					<span id="cta">
-						<i class="fa fa-cart-arrow-down"  id="numberItem">0</i>
+						<a href="{{ route('theme-cart-page') }}"><i class="fa fa-cart-arrow-down"  id="numberItem"> [ <span class="cart-quantity"> {{ showCartQuantity() }}</span> ] </i></a>
 					</span>
 			</div>
 			<div class="clearfix"> </div>
