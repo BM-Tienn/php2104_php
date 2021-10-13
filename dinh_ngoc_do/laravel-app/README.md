@@ -62,3 +62,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+--Shopper app--
+--Update--
+- Shop Page: /shopper_fashion/shop
++ Get products and categories data from db
++ Order products by price, low -> high
++ Pagination, 12 product each page
++ Show categories, take 3 categories with the highest number of items sold
+
+-Product Page: /shopper_fashion/product/{id}
++ Get products data from db
++ Featured Products, take 5 product with the highest of price
+
