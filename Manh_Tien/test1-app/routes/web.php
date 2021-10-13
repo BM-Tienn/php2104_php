@@ -221,4 +221,5 @@ Route::name('admin')->prefix('admin')->group(function () {
 });
 use App\Http\Controllers\OrderController;
 Route::post('add-to-cart', [OrderController::class, 'saveDataToSession'])->name('order.save');
-Route::get('/theme-cart-page', [ProductController::class, 'cart'])->name('theme-cart-page');
+Route::get('/order.list', [OrderController::class, 'orderList'])->name('order.list');
+Route::post('remove-product', [OrderController::class, 'removeDataFromSession'])->name('order.remove');

@@ -33,6 +33,7 @@
         <script type="text/javascript" src="{{ asset('js/mypage/easing.js') }}" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
         <script type="text/javascript">
             jQuery(document).ready(function($) {
                 $(".scroll").click(function(event){		
@@ -88,6 +89,23 @@
                 });
         </script>	
         <!-- //main slider-banner --> 
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $.ajaxSetup({
+              headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
+            });
+            Object.size = function(obj) {
+              var size = 0,
+                key;
+              for (key in obj) {
+                if (obj.hasOwnProperty(key)) size++;
+              }
+              return size;
+            };
+        });
+        </script>
         @yield('script') 
         
     </body>

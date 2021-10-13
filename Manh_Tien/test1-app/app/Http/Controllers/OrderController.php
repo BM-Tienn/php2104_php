@@ -55,4 +55,43 @@ class OrderController extends Controller
 
         return json_encode($data);
     }
+
+    public function removeDataFromSession(Request $request)
+    {
+        $productId = (int) $request->product_id;
+        $cartData = session('cart');
+
+        foreach ($cartData as $key => $productData) {
+            if ($productData['id'] == $productId) {
+                unset($cartData[$key]);
+            }
+        }
+
+        if (is_null($cartData)) {
+            session()->forget('cart');
+
+            return json_encode([]);
+        }
+
+        $request->session()->forget('cart');
+        session(['cart' => $cartData]);
+
+        return json_encode(['cart' => $cartData]);
+    }
+    
+    public function orderList()
+    {
+        $cartData = session('cart');
+        $cartData = collect($cartData);
+
+        $productData = $cartData->pluck('quantity', 'id')->toArray();
+        $productIds = $cartData->pluck('id');
+
+        $products = $this->productModel->whereIn('id', $productIds)->get();
+
+        return view('my-theme-page.cart-ms', [
+            'products' => $products,
+            'productData' => $productData,
+        ]);
+    }
 }

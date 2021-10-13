@@ -39,7 +39,7 @@
 							<input type="text" id="quantity" name="quantity" class="form-control input-number product-quantity" value="1" min="1" max="100">
 						</div>
 						<div class="input-group">
-							<a href="#" class="btn add-to-cart add-to-cart-detalt" data-product_id="{{ $product->id }}" >Add to Cart</a></p>
+							<input type="submit" name="submit" value="Add to Cart" data-product_id="{{ $product->id }}" class="button add-to-cart-detalt">
 						</div>
 						
 					</div>
@@ -53,6 +53,7 @@
 		<div class="container">
 			<h3>New offers</h3>
 				<div class="agile_top_brands_grids">
+					@foreach ($newProduct as $newProduct)
 					<div class="col-md-3 top_brand_left-1">
 						<div class="hover14 column">
 							<div class="agile_top_brand_left_grid">
@@ -63,8 +64,8 @@
 									<figure>
 										<div class="snipcart-item block">
 											<div class="snipcart-thumb">
-												<x-nav-link :href="route('theme-products-page')" :active="request()->routeIs('theme-products-page')"><img title=" " alt=" " src="/images/14.png"></x-nav-link>		
-												<p>Fried-gram</p>
+												<x-nav-link :href="route('theme-products-page')" :active="request()->routeIs('theme-products-page')"><img title=" " alt=" " src="/{{ $newProduct->image }}"></x-nav-link>		
+												<p>{{ $newProduct->name }}</p>
 												<div class="stars">
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -72,178 +73,22 @@
 													<i class="fa fa-star blue-star" aria-hidden="true"></i>
 													<i class="fa fa-star gray-star" aria-hidden="true"></i>
 												</div>
-													<h4>$35.99 <span>$55.00</span></h4>
+													<h4>${{ $newProduct->price_sale }} <span>${{ $newProduct->price }}</span></h4>
 											</div>
 											<div class="snipcart-details top_brand_home_details">
-												<input type="submit" name="submit" value="Add to cart" class="button">
+												<input type="submit" name="submit" value="Add to cart" data-product_id="{{ $newProduct->id }}" class="button add-to-cart">
 											</div>
 										</div>
 									</figure>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-3 top_brand_left-1">
-						<div class="hover14 column">
-							<div class="agile_top_brand_left_grid">
-								<div class="agile_top_brand_left_grid_pos">
-									<img src="/images/offer.png" alt=" " class="img-responsive">
-								</div>
-								<div class="agile_top_brand_left_grid1">
-									<figure>
-										<div class="snipcart-item block">
-											<div class="snipcart-thumb">
-												<x-nav-link :href="route('theme-products-page')" :active="request()->routeIs('theme-products-page')"><img title=" " alt=" " src="/images/15.png"></x-nav-link>		
-												<p>Navaratan-dal</p>
-												<div class="stars">
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												</div>
-													<h4>$30.99 <span>$45.00</span></h4>
-											</div>
-											<div class="snipcart-details top_brand_home_details">
-												<input type="submit" name="submit" value="Add to cart" class="button">
-											</div>
-										</div>
-									</figure>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 top_brand_left-1">
-						<div class="hover14 column">
-							<div class="agile_top_brand_left_grid">
-								<div class="agile_top_brand_left_grid_pos">
-									<img src="/images/offer.png" alt=" " class="img-responsive">
-								</div>
-								<div class="agile_top_brand_left_grid_pos">
-									<img src="/images/offer.png" alt=" " class="img-responsive">
-								</div>
-								<div class="agile_top_brand_left_grid1">
-									<figure>
-										<div class="snipcart-item block">
-											<div class="snipcart-thumb">
-												<x-nav-link :href="route('theme-products-page')" :active="request()->routeIs('theme-products-page')"><img src="/images/16.png" alt=" " class="img-responsive"></x-nav-link>
-												<p>White-peasmatar</p>
-												<div class="stars">
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												</div>
-													<h4>$80.99 <span>$105.00</span></h4>
-											</div>
-											<div class="snipcart-details top_brand_home_details">
-												<input type="submit" name="submit" value="Add to cart" class="button">
-											</div>
-										</div>
-									</figure>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 top_brand_left-1">
-						<div class="hover14 column">
-							<div class="agile_top_brand_left_grid">
-								<div class="agile_top_brand_left_grid_pos">
-									<img src="/images/offer.png" alt=" " class="img-responsive">
-								</div>
-								<div class="agile_top_brand_left_grid1">
-									<figure>
-										<div class="snipcart-item block">
-											<div class="snipcart-thumb">
-												<x-nav-link :href="route('theme-products-page')" :active="request()->routeIs('theme-products-page')"><img title=" " alt=" " src="/images/17.png"></x-nav-link>		
-												<p>Channa-dal</p>
-												<div class="stars">
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star blue-star" aria-hidden="true"></i>
-													<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												</div>
-													<h4>$35.99 <span>$55.00</span></h4>
-											</div>
-											<div class="snipcart-details top_brand_home_details ">
-												<input type="submit" name="submit" value="Add to cart" class="button">
-											</div>
-										</div>
-									</figure>
-								</div>
-							</div>
-						</div>
-					</div>
+					</div> 
+					@endforeach
 						<div class="clearfix"> </div>
 				</div>
 		</div>
 	</div>
 
-	@section('script')
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$.ajaxSetup({
-					headers: {
-						'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-					}
-				});
-				/*$('.add-to-cart').click(function(e){
-					e.preventDefault(); 
-					var currentQuantity = parseInt( $('#numberItem').text());
-					var addQuantity = parseInt($('#quantity').val());
-					var newQuantity = currentQuantity + addQuantity;
-					$('#numberItem').text(newQuantity);
-					*/
-					Object.size = function(obj) {
-					var size = 0,
-						key;
-					for (key in obj) {
-						if (obj.hasOwnProperty(key)) size++;
-					}
-					return size;
-					};
-					$('.add-to-cart-detalt').click(function(e) {
-					e.preventDefault();
-					//Swal.fire('Add to cart successfully !' )
-					var product_id =$(this).data('product_id');
-					var quantity = $('.product-quantity').val();
-					
-					var url = "{{ route('order.save') }}";
-
-					$.ajax(url, {
-						type: 'POST',
-						data: {
-							product_id:  product_id,
-							quantity: quantity,
-						},
-						success: function (data) {
-							console.log('success');
-						var objData = JSON.parse(data);
-						var newQuantity = Object.size(objData.cart);
-						$('.cart-quantity').text(newQuantity);
-						Swal.fire({
-							position: 'top-end',
-							icon: 'success',
-							title: 'Add to cart success!',
-							showConfirmButton: false,
-							timer: 1500
-						});
-						},
-						error: function () {
-							console.log('fall');
-							Swal.fire({
-								position: 'top-end',
-								icon: 'error',
-								title: 'Failed!',
-								showConfirmButton: false,
-								timer: 1500
-							});
-						}
-					});
-				});
-			});
-        </script>
-	@endsection
+	@include('layouts.themes.add-to-cart')
 </x-theme-lay-out>

@@ -16,13 +16,7 @@ class ProductController extends Controller
         return view('my-theme-page.products-page', ['products' => $products]);
     } 
 
-    public function cart ()
-    {
-        $products = DB::table('shop_products')
-                    ->paginate(9);
-
-        return view('my-theme-page.cart-ms', ['products' => $products]);
-    } 
+    
 
     public function show ()
     {
