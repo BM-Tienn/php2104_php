@@ -223,3 +223,6 @@ use App\Http\Controllers\OrderController;
 Route::post('add-to-cart', [OrderController::class, 'saveDataToSession'])->name('order.save');
 Route::get('/order.list', [OrderController::class, 'orderList'])->name('order.list');
 Route::post('remove-product', [OrderController::class, 'removeDataFromSession'])->name('order.remove');
+Route::put('order-update', [OrderController::class, 'update'])->name('order.update');
+Route::get('checkout', [OrderController::class, 'checkout'])->name('order.checkout');
+Route::post('purchase', [OrderController::class, 'purchase'])->name('order.purchase');
