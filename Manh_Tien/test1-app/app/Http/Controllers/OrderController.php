@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\ShopProduct;
 use App\Models\Order;
 use App\Models\OrderProducts;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\orderShipped;
 
 class OrderController extends Controller
 {
@@ -100,7 +102,7 @@ class OrderController extends Controller
 
         $products = $this->productModel->whereIn('id', $productIds)->get();
 
-        return view('my-theme-page.cart-ms', [
+        return view('my-theme-page.order-list', [
             'products' => $products,
             'productData' => $productData,
         ]);
@@ -176,12 +178,16 @@ class OrderController extends Controller
                     'quantity' => $product['quantity'],
                 ];
             }
-
+            \DB::beginTransaction();
             $this->productOrderModel->insert($productOrderData);
         } catch (\Exception $e) {
             \Log::error($e);
+            \DB::rollBack();
         }
+        \DB::commit();
 
+		//send mail
+		Mail::to('tien1208xx@gmail.com')->send(new orderShipped($order));
         return json_encode(['status' => true]);
     }   
 }

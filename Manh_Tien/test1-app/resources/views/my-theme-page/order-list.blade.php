@@ -69,14 +69,14 @@
               </div>
             </form>
           </div>
-          <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Apply Coupon</a></p>
+          <p><a href="{{ route('order.checkout') }}" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
         </div>
         <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
           <div class="cart-total mb-3">
             <h3>Cart Totals</h3>
             <p class="d-flex">
               <span>Subtotal</span>
-              $<span id="subtotal">{{ $subtotal }}</span>
+              
             </p>
             <p class="d-flex">
               <span>Delivery</span>
@@ -89,7 +89,7 @@
             <hr>
             <p class="d-flex total-price">
               <span>Total</span>
-              $<span id="total-final">{{ $total }}</span>
+              
             </p>
           </div>
           <p><a href="{{ route('order.checkout') }}" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
