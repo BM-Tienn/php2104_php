@@ -9,6 +9,8 @@ use App\Models\Order;
 use App\Models\OrderProducts;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\orderShipped;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
 {
@@ -28,6 +30,11 @@ class OrderController extends Controller
         $this->productModel = $product;
         $this->orderModel = $order;
         $this->productOrderModel = $productOrder;
+    }
+
+    public function export() 
+    {
+        return Excel::download(new UsersExport, 'users.xlsx');
     }
 
     public function saveDataToSession(Request $request)
@@ -187,7 +194,7 @@ class OrderController extends Controller
         \DB::commit();
 
 		//send mail
-		Mail::to('tien1208xx@gmail.com')->send(new orderShipped($order));
+		Mail::to('tien1208xx@gmail.com')->send('new orderShipped($order)');
         return json_encode(['status' => true]);
     }   
 }

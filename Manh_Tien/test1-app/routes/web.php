@@ -226,3 +226,4 @@ Route::post('remove-product', [OrderController::class, 'removeDataFromSession'])
 Route::put('order-update', [OrderController::class, 'update'])->name('order.update');
 Route::get('checkout', [OrderController::class, 'checkout'])->name('order.checkout');
 Route::post('purchase', [OrderController::class, 'purchase'])->name('order.purchase');
+Route::get('users/export/', [OrderController::class, 'export']);

@@ -1979,14 +1979,6 @@ a.callbacks1_s3.active,a.callbacks1_s3:focus{
 	outline: none;
 }
 
-.input-group #quantity{
-    text-align: center;
-}
-
-#cta {
-    background-color: #029241;
-}
-
 .input__label {
 	display: inline-block;
     float: right;
