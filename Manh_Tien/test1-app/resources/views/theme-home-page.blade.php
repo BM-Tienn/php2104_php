@@ -42,21 +42,8 @@
 															</div>
 															<h4>${{ $product->price_sale }} <span>${{ $product->price }}</span></h4>
 														</div>
-														<div class="snipcart-details top_brand_home_details">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart">
-																	<input type="hidden" name="add" value="1">
-																	<input type="hidden" name="business" value=" ">
-																	<input type="hidden" name="item_name" value="Fortune Sunflower Oil">
-																	<input type="hidden" name="amount" value="35.99">
-																	<input type="hidden" name="discount_amount" value="1.00">
-																	<input type="hidden" name="currency_code" value="USD">
-																	<input type="hidden" name="return" value=" ">
-																	<input type="hidden" name="cancel_return" value=" ">
-																	<input type="submit" name="submit" value="Add to cart" class="button">
-																</fieldset>
-															</form>
+														<div class="snipcart-details top_brand_home_detailsadd_to_cart">
+															<input type="submit" name="submit" value="Add to cart" data-product_id="{{ $product->id }}" class="button add-to-cart-hear">
 														</div>
 													</div>
 												</figure>
@@ -95,21 +82,8 @@
 															</div>
 															<h4>${{ $product->price_sale }} <span>${{ $product->price }}</span></h4>
 														</div>
-														<div class="snipcart-details top_brand_home_details">
-															<form action="#" method="post">
-																<fieldset>
-																	<input type="hidden" name="cmd" value="_cart">
-																	<input type="hidden" name="add" value="1">
-																	<input type="hidden" name="business" value=" ">
-																	<input type="hidden" name="item_name" value="Fortune Sunflower Oil">
-																	<input type="hidden" name="amount" value="35.99">
-																	<input type="hidden" name="discount_amount" value="1.00">
-																	<input type="hidden" name="currency_code" value="USD">
-																	<input type="hidden" name="return" value=" ">
-																	<input type="hidden" name="cancel_return" value=" ">
-																	<input type="submit" name="submit" value="Add to cart" class="button">
-																</fieldset>
-															</form>
+														<div class="snipcart-details top_brand_home_details add_to_cart">
+															<input type="submit" name="submit" value="Add to cart" data-product_id="{{ $product->id }}" class="button add-to-cart-hear">
 														</div>
 													</div>
 												</figure>
@@ -168,5 +142,5 @@
 	
 	<x-theme-new>
 	</x-theme-new>
-
+	@include('layouts.themes.add-to-cart')
 </x-theme-lay-out>

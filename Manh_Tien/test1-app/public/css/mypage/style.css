@@ -1979,6 +1979,9 @@ a.callbacks1_s3.active,a.callbacks1_s3:focus{
 	outline: none;
 }
 
+.input-number {
+    text-align: center;
+}
 .input__label {
 	display: inline-block;
     float: right;

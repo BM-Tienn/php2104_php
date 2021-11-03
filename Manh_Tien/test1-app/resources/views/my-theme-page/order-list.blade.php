@@ -20,8 +20,8 @@
                 @foreach ($products as $product)
                 <tr class="text-center">
                   <td class="product-remove">
-                    <a href="#" class="product-delete" data-product_id="{{ $product->id }}">
-                      <span class="ion-ios-close"></span>
+                    <a href="" class="product-delete" data-product_id="{{ $product->id }}">
+                      <span class="fas fa-trash-alt"></span>
                     </a>
                   </td>
 
@@ -33,7 +33,7 @@
                   </td>
 
                   <td>$<span class="price">{{ $product->price }}</span></td>
-                  <td><span class="sale-off">{{ $product->sale_off }}</span>%</td>
+                  <td><span class="sale-off">{{ $product->sale_off }}10</span>%</td>
 
                   <td class="quantity">
                     <div class="input-group mb-3">
@@ -60,58 +60,22 @@
       <div class="row justify-content-end">
         <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
           <div class="cart-total mb-3">
-            <h3>Coupon Code</h3>
-            <p>Enter your coupon code if you have one</p>
-            <form action="#" class="info">
-              <div class="form-group">
-                <label for="">Coupon code</label>
-                <input type="text" class="form-control text-left px-3" placeholder="">
-              </div>
-            </form>
-          </div>
-          <p><a href="{{ route('order.checkout') }}" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
-        </div>
-        <div class="col-lg-4 mt-5 cart-wrap ftco-animate">
-          <div class="cart-total mb-3">
             <h3>Cart Totals</h3>
             <p class="d-flex">
               <span>Subtotal</span>
-              
+              $<span id="subtotal">{{ $subtotal }}</span>
             </p>
             <p class="d-flex">
               <span>Delivery</span>
-              $<span id="delivery">0.00</span>
-            </p>
-            <p class="d-flex">
-              <span>Discount</span>
-              <span>$0.00</span>
+              $<span id="delivery">30</span>
             </p>
             <hr>
             <p class="d-flex total-price">
               <span>Total</span>
-              
+              $<span id="total-final">{{ $total }}</span>
             </p>
           </div>
           <p><a href="{{ route('order.checkout') }}" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
-    <div class="container py-4">
-      <div class="row d-flex justify-content-center py-5">
-        <div class="col-md-6">
-          <h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
-          <span>Get e-mail updates about our latest shops and special offers</span>
-        </div>
-        <div class="col-md-6 d-flex align-items-center">
-          <form action="#" class="subscribe-form">
-            <div class="form-group d-flex">
-              <input type="text" class="form-control" placeholder="Enter email address">
-              <input type="submit" value="Subscribe" class="submit px-3">
-            </div>
-          </form>
         </div>
       </div>
     </div>
@@ -161,6 +125,9 @@
                   });
                 }
               });
+            }
+          });
+        });
         $('.product-quantity').keyup(function() {
           var newQuantity = $(this).val();
           var trElement = $(this).closest('tr');

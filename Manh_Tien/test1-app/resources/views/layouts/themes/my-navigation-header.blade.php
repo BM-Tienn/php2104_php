@@ -8,7 +8,7 @@
 			</div>
 			<div class="agile-login">
 				<ul>
-					<li><x-nav-link :href="route('theme-registered-page')" :active="request()->routeIs('theme-registered-page')">{{ __('Create Account') }}</x-nav-link></li>
+					<li><x-nav-link :href="route('userweb.create')" :active="request()->routeIs('theme-registered-page')">{{ __('Create Account') }}</x-nav-link></li>
 					<li><x-nav-link :href="route('theme-login-page')" :active="request()->routeIs('theme-login-page')">{{ __('Login') }}</x-nav-link></li>
 					<li><x-nav-link :href="route('theme-contact-page')" :active="request()->routeIs('theme-contact-page')">{{ __('Help') }}</x-nav-link></li>
 				</ul>

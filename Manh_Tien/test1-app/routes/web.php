@@ -7,6 +7,7 @@ use App\Http\Controllers\SingleController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\UserWebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -227,3 +228,4 @@ Route::put('order-update', [OrderController::class, 'update'])->name('order.upda
 Route::get('checkout', [OrderController::class, 'checkout'])->name('order.checkout');
 Route::post('purchase', [OrderController::class, 'purchase'])->name('order.purchase');
 Route::get('users/export/', [OrderController::class, 'export']);
+Route::resource('userweb',UserWebController::class);

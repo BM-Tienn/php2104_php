@@ -109,9 +109,19 @@ class OrderController extends Controller
 
         $products = $this->productModel->whereIn('id', $productIds)->get();
 
+        $subtotal = 0;
+        $delivery = 0;
+        foreach ($products as $product) {
+            $subtotal += $product->price * $productData[$product->id] * ((100 - $product->sale_off) / 100);
+        }
+        $total = $subtotal + $delivery ;
+
         return view('my-theme-page.order-list', [
             'products' => $products,
             'productData' => $productData,
+            'subtotal' => $subtotal,
+            'delivery' => $delivery,
+            'total'=>$total,
         ]);
     }
 

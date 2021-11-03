@@ -2003,7 +2003,9 @@ a.callbacks1_s3.active,a.callbacks1_s3:focus{
 	width: calc(100% - 0em);
 	vertical-align: top;
 }
-
+.input-number {
+    text-align: center;
+}
 .input__field {
 	position: relative;
 	display: block;
